@@ -24,6 +24,8 @@ check:
     fi;                                           \
     echo "success";
 
+.PHONY: clean IDB1.log
+
 clean:
 	rm -f  *.pyc
 	rm -rf __pycache__
@@ -47,10 +49,9 @@ test: tests.py
 model.html: model.py
 	pydoc3 -w model
 
-IDB.log:
-	git log > IDB.log
+IDB1.log:
+	git log > IDB1.log
 
-commit: FILES IDB.log model.html
-	mv IDB.log IDB1.log
+commit: $(FILES) IDB1.log model.html
 	git add IDB1.log model.html
 	git commit

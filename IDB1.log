@@ -1,3 +1,9 @@
+commit 5bbf7f8d7c1ccd86484b50d47b956b0aaf1a9622
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Sun Mar 20 15:52:11 2016 -0500
+
+    Initial makefile and docker skeleton.
+
 commit 9b0c96ab42b995bc4301d04164562d5c8030dc7f
 Author: Tres <theodore.popp3@gmail.com>
 Date:   Sun Mar 20 15:45:06 2016 -0500
