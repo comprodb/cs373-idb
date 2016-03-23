@@ -2,7 +2,7 @@ FILES :=                              \
     .travis.yml                       \
     makefile                          \
     IDB1.log                          \
-    model.html                       \
+    models.html                       \
     model.py
 
 check:
@@ -28,7 +28,7 @@ check:
 
 clean:
 	rm -f  *.pyc
-	rm -rf __pycache__
+	sudo rm -rf __pycache__
 
 config:
 	git config -l
@@ -46,12 +46,12 @@ status:
 test: tests.py
 	python ./tests.py
 
-model.html: model.py
-	pydoc3 -w model
+models.html: models.py
+	python -m pydoc -w models
 
 IDB1.log:
 	git log > IDB1.log
 
-commit: $(FILES) IDB1.log model.html
-	git add IDB1.log model.html
+commit: $(FILES) IDB1.log models.html
+	git add IDB1.log models.html
 	git commit

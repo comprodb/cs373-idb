@@ -1,3 +1,15 @@
+commit 3d4a71f6b69a1cbf9387ce379a295b12d4809571
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Mon Mar 21 16:32:29 2016 -0500
+
+    Added back missing host location to allow docker to work
+
+commit e2c8926e133722a56023bb00235727b9d86bbe26
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Sun Mar 20 15:54:34 2016 -0500
+
+    Changes to make commit
+
 commit 5bbf7f8d7c1ccd86484b50d47b956b0aaf1a9622
 Author: Tres Popp <theodore.popp3@gmail.com>
 Date:   Sun Mar 20 15:52:11 2016 -0500

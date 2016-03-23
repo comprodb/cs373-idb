@@ -1,3 +1,5 @@
-coverage
 requests
 flask
+psycopg2
+sqlalchemy
+Flask-SQLAlchemy
