@@ -87,3 +87,35 @@ class Problem(db.Model):
 
     def __repr__(self):
         return self.name
+class Submission(db.Model):
+    __tablename__ = "SUBMISSION"
+    submission_id = db.Column(db.Integer, primary_key=True)
+    """Contest that the problem is part of."""
+
+    contest_id = db.Column(db.Integer)
+    """Contest that the problem is part of.
+
+    With index, forms a unique id"""
+    problem_index = db.Column(db.Text)
+    """Index into contest.
+
+    With contest_id, forms a unique id"""
+    who = db.Column(db.Text)
+    """Submitter's name"""
+
+    verdict = db.Column("verdict", db.Enum("FAILED", "OK", "PARTIAL", "COMPILATION_ERROR",
+                                           "RUNTIME_ERROR", "WRONG_ANSWER", "PRESENTATION_ERROR",
+                                           "TIME_LIMIT_EXCEEDED", "MEMORY_LIMIT_EXCEEDED", "IDLENESS_LIMIT_EXCEEDED",
+                                           "SECURITY_VIOLATED", "CRASHED", "INPUT_PREPARATION_CRASHED", "CHALLENGED",
+                                           "SKIPPED", "TESTING", "REJECTED", name="verdict"))
+    """Result of submission"""
+
+    def __init__(self, submission_id, contest_id, problem_index, who, verdict):
+        self.submission_id = submission_id
+        self.contest_id = contest_id
+        self.problem_index = problem_index
+        self.who = who
+        self.verdict = verdict
+
+    def __repr__(self):
+        return str(self.submission_id)
