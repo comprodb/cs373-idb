@@ -16,7 +16,7 @@ export default class About extends React.Component {
       <div className="col-md-8 col-md-offset-2">
         <h1 className="text-center">About Us</h1>
         {this.state.abouts.map((about) => (
-          <div className="panel panel-default">
+          <div className="panel panel-default" key={about.name}>
             <div className="panel-heading">
               <h2>{about.name}</h2>
             </div>
