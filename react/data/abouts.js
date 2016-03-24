@@ -28,11 +28,11 @@ module.exports = [
 	},
 	{
 		name: "Joey Ewbank",
-		photo: "",
-		bio: "",
+		photo: "https://lh3.googleusercontent.com/-wRW2XFqiVV0/Vfhf0cz5JmI/AAAAAAAABsk/xDk8_SKW2bkPxJkK-fasUQbrfR9zefoZg/w140-h140-p/nice_pic.jpg",
+		bio: "Aspiring Educator, Secondary DotA Person",
 		responsibilities: "Tester",
 		commits: "c",
 		issues: "i",
-		tests: "t",
+		tests: "18",
 	}
 ]
