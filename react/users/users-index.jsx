@@ -9,7 +9,28 @@ export default class UsersIndex extends React.Component {
     super();
     this.state = {
       users: users,
+      sorted_by: null,
     };
+
+    this.sortBy = this.sortBy.bind(this);
+  }
+
+  sortBy(field) {
+    let users = this.state.users;
+    if (field === this.state.sorted_by) {
+      users.reverse();
+    } else {
+      users.sort((a, b) => {
+        if (a[field] < b[field]) return -1;
+        if (a[field] > b[field]) return 1;
+        return 0;
+      });
+    }
+
+    this.setState({
+      users: users,
+      sorted_by: field,
+    });
   }
 
   render() {
@@ -19,11 +40,11 @@ export default class UsersIndex extends React.Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>Handle</th>
-              <th>Name</th>
-              <th>Rank</th>
-              <th>Rating</th>
-              <th>Registration Date</th>
+              <th><a href="#" onClick={() => this.sortBy('handle')}>Handle</a></th>
+              <th><a href="#" onClick={() => this.sortBy('name')}>Name</a></th>
+              <th><a href="#" onClick={() => this.sortBy('rank')}>Rank</a></th>
+              <th><a href="#" onClick={() => this.sortBy('rating')}>Rating</a></th>
+              <th><a href="#" onClick={() => this.sortBy('registration_time')}>Registration Date</a></th>
             </tr>
           </thead>
           <tbody>
