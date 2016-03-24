@@ -62,7 +62,7 @@ export default class About extends React.Component {
             </div>
             <div className="col-md-6">
               <h3>Data Sources</h3>
-              <p><a href="www.codeforces.com/api/help">www.codeforces.com/api/help</a></p>
+              <p><a href="http://www.codeforces.com/api/help">www.codeforces.com/api/help</a></p>
               <h3>Obtaining Data</h3>
               <p>{this.state.statistics.data_source_description}</p>
               <h3>Tools</h3>
