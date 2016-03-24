@@ -4,9 +4,14 @@ import { render } from 'react-dom'
 
 import Navbar from './nav-bar';
 import Home from './home/home';
+
 import Users from './users/users';
 import UsersIndex from './users/users-index';
 import User from './users/user';
+
+import Problems from './problems/problems';
+import ProblemsIndex from './problems/problems-index';
+import Problem from './problems/problem';
 
 class App extends React.Component {
   render() {
@@ -26,6 +31,10 @@ const router = (
       <Route path="users" component={Users}>
         <IndexRoute component={UsersIndex} />
         <Route path=":id" component={User} />
+      </Route>
+      <Route path="problems" component={Problems}>
+        <IndexRoute component={ProblemsIndex} />
+        <Route path=":id" component={Problem} />
       </Route>
     </Route>
   </Router>
