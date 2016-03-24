@@ -1,11 +1,12 @@
 **Template**
 
 Users
-	- Rating/Max Rating
+	- Rating
+	- Rank
 	- Handle
 	- Name
-	- Country
 	- Registration Time
+	- Country (not in model yet)
 	- Num Contests (not in model yet)
 	- Num Problems Solved (not in model yet)
 
@@ -31,8 +32,52 @@ Contests
 
 **Sample Data**
 
-Users
-- Staticity
-- arknave
-- dtalamas24
+Users:
+======
+{
+	"handle":"Staticity",
+	"firstName":"Jaime",
+	"lastName":"Rivera",
+	"country":"United States (USA)",
+	"city":"Austin",
+	"organization":"University of Texas at Austin",
+	"contribution":0
+	"rank":"specialist",
+	"rating":1530,
+	"maxRank":"specialist",
+	"maxRating":1599,
+	"lastOnlineTimeSeconds":1458786850,
+	"registrationTimeSeconds":1375547293
+},
+
+{
+	"handle":"arknave",
+	"country":"United States (USA)",
+	"organization":"University of Texas at Austin",
+	"contribution":2,
+	"rank":"expert",
+	"rating":1766,
+	"maxRank":"candidate master",
+	"maxRating":2031,
+	"lastOnlineTimeSeconds":1458630002,
+	"registrationTimeSeconds":1363182302
+},
+
+{
+	"handle":"dtalamas24",
+	"firstName":"Daniel",
+	"lastName":"Talamas",
+	"country":"Mexico",
+	"organization":"University of Texas at Austin",
+	"contribution":33,
+	"rank":"candidate master",
+	"rating":2029,
+	"maxRank":"candidate master",
+	"maxRating":2119,
+	"lastOnlineTimeSeconds":1458779324,
+	"registrationTimeSeconds":1343162470
+}
+
+Problems:
+=========
 
