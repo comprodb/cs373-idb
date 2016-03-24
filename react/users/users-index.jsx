@@ -21,6 +21,8 @@ export default class UsersIndex extends React.Component {
               <th>Handle</th>
               <th>Name</th>
               <th>Rank</th>
+              <th>Rating</th>
+              <th>Registration Year</th>
             </tr>
           </thead>
           <tbody>
@@ -29,6 +31,8 @@ export default class UsersIndex extends React.Component {
                 <td><Link to={`users/${user.handle}`}>{user.handle}</Link></td>
                 <td>{user.name}</td>
                 <td>{user.rank}</td>
+                <td>{user.rating}</td>
+                <td>{new Date(1000 * user.registration_time).getFullYear()}</td>
               </tr>
             ))}
           </tbody>
