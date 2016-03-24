@@ -30,12 +30,14 @@ export default class Contest extends React.Component {
 
     const date = moment.unix(contest.date).format("MMM Do YYYY");
 
+    const url = `http://codeforces.com/contest/${contest.id}`;
+
     return (
       <div>
         <h1>{contest.name}</h1>
         <p>Posted {date}</p>
         <h3>Problems</h3>
-        <div className="list-group col-md-4">
+        <div className="list-group">
           {contest_problems.map((problem) => (
             <Link
               to={`/problems/${problem.id}`}
@@ -45,6 +47,9 @@ export default class Contest extends React.Component {
             </Link>
           ))}
         </div>
+        <a className="btn btn-default" href={url} role="button">
+          Visit this contest on codeforces
+        </a>
       </div>
     );
   }

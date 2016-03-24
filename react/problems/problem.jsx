@@ -21,6 +21,10 @@ export default class Problem extends React.Component {
 
   render() {
     const problem = this.state.problem;
+
+    const url =
+      `http://codeforces.com/problemset/problem/${problem.contest_id}/${problem.index}`;
+
     return (
       <div>
         <h1>{this.state.problem.name}</h1>
@@ -29,6 +33,11 @@ export default class Problem extends React.Component {
         {problem.tags.map((tag) => (
           <p className="label label-default" key={tag}>{tag}</p>
         ))}
+        <div style={{marginTop: 20}}>
+          <a className="btn btn-default" href={url} role="button">
+            Visit this problem on codeforces
+          </a>
+        </div>
       </div>
     );
   }
