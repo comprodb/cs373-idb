@@ -6,9 +6,31 @@ import problems from '../data/problems';
 export default class ProblemIndex extends React.Component {
   constructor() {
     super();
+
     this.state = {
-      problems: problems
+      problems: problems,
+      sorted_by: null,
     };
+
+    this.sortBy = this.sortBy.bind(this);
+  }
+
+  sortBy(field) {
+    let problems = this.state.problems;
+    if (field === this.state.sorted_by) {
+      problems.reverse();
+    } else {
+      problems.sort((a, b) => {
+        if (a[field] < b[field]) return -1;
+        if (a[field] > b[field]) return 1;
+        return 0;
+      });
+    }
+
+    this.setState({
+      problems: problems,
+      sorted_by: field,
+    });
   }
 
   render() {
@@ -18,11 +40,11 @@ export default class ProblemIndex extends React.Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Contest ID</th>
-              <th>Index</th>
+              <th><a href="#" onClick={() => this.sortBy('name')}>Name</a></th>
+              <th><a href="#" onClick={() => this.sortBy('contest_id')}>Contest ID</a></th>
+              <th><a href="#" onClick={() => this.sortBy('index')}>Index</a></th>
               <th>Tags</th>
-              <th>Points</th>
+              <th><a href="#" onClick={() => this.sortBy('points')}>Points</a></th>
             </tr>
           </thead>
           <tbody>
@@ -37,7 +59,6 @@ export default class ProblemIndex extends React.Component {
                   ))}
                 </td>
                 <td>{problem.points}</td>
-
               </tr>
             ))}
           </tbody>
