@@ -47,7 +47,7 @@ export default class Home extends React.Component {
             <h2>What People Are Saying</h2>
           </div>
 
-          <div className="row" style={{textAlign: 'center'}}>
+          <div className="row text-center">
             <div className="col-md-6">
               <TwitterTimeline widgetId="712867561201917953" />
             </div>

@@ -13,38 +13,33 @@ export default class About extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Abouts</h1>
-            {this.state.abouts.map((about) => (
-          <div>
-				<table className="table">
-                <td>
-				<table className="table">
-					<thead>
-					<td>{about.name}</td>
-					</thead>
-					<tr>
-					<td><img src={about.photo} className="img-responsive" width="400" height="400"/></td>
-					</tr>
-				</table>
-                </td>
-
-
-
-
-              <td>
-				<table className="table table-striped table-hover">
-                <tr><td>Bio</td><td>{about.bio}</td></tr>
-                <tr><td>Responsibilities</td><td>{about.responsibilities}</td></tr>
-                <tr><td>Commits</td><td>{about.commits}</td></tr>
-                <tr><td>Issues</td><td>{about.issues}</td></tr>
-                <tr><td>Tests</td><td>{about.tests}</td></tr>
-				</table>
-              </td>
-				</table>
+      <div className="col-md-8 col-md-offset-2">
+        <h1 className="text-center">About Us</h1>
+        {this.state.abouts.map((about) => (
+          <div className="panel panel-default">
+            <div className="panel-heading">
+              <h2>{about.name}</h2>
+            </div>
+            <div className="row panel-body">
+              <div className="col-md-6">
+                <img src={about.photo} className="img-responsive" />
+              </div>
+              <div className="col-md-6">
+                <h3>Bio</h3>
+                <p>{about.bio}</p>
+                <h3>Responsibilities</h3>
+                <p>{about.responsibilities}</p>
+                <h3>Commits</h3>
+                <p>{about.commits}</p>
+                <h3>Issues</h3>
+                <p>{about.issues}</p>
+                <h3>Tests</h3>
+                <p>{about.tests}</p>
+              </div>
+            </div>
           </div>
-            ))}
-      </div>
+          ))}
+        </div>
     );
   }
 }
