@@ -1,9 +1,9 @@
 module.exports = [
 	{
 		name: "Robert Lynch",
-		photo: "",
-		bio: "",
-		responsibilities: "React Expert",
+		photo: "http://bobertforever.github.io/cs373-blog/images/profile.jpg",
+		bio: "Webdev Person",
+		responsibilities: "Resident React / Docker Expert",
 		commits: "c",
 		issues: "i",
 		tests: "t",
