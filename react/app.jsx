@@ -5,6 +5,9 @@ import { render } from 'react-dom'
 import Navbar from './nav-bar';
 import Home from './home/home';
 
+import About from './about/about';
+import AboutIndex from './about/about-index';
+
 import Users from './users/users';
 import UsersIndex from './users/users-index';
 import User from './users/user';
@@ -28,6 +31,9 @@ const router = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
+      <Route path="about" component={About}>
+        <IndexRoute component={AboutIndex} />
+      </Route>
       <Route path="users" component={Users}>
         <IndexRoute component={UsersIndex} />
         <Route path=":id" component={User} />
