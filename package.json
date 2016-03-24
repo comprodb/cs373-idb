@@ -13,7 +13,7 @@
     "watchify": "^3.7.0"
   },
   "config": {
-    "build_args": "react/app.jsx -o static/bundle.js -t babelify --extension=.jsx"
+    "build_args": "react/app.jsx -o static/bundle.js -t babelify --extension=.jsx --extension=.js"
   },
   "scripts": {
     "dist": "browserify $npm_package_config_build_args",
