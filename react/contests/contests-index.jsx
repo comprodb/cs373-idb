@@ -10,6 +10,26 @@ export default class ContestsIndex extends React.Component {
     this.state = {
       contests: contests,
     };
+
+    this.sortBy = this.sortBy.bind(this);
+  }
+
+  sortBy(field) {
+    let contests = this.state.contests;
+    if (field === this.state.sorted_by) {
+      contests.reverse();
+    } else {
+      contests.sort((a, b) => {
+        if (a[field] < b[field]) return -1;
+        if (a[field] > b[field]) return 1;
+        return 0;
+      });
+    }
+
+    this.setState({
+      contests: contests,
+      sorted_by: field,
+    });
   }
 
   render() {
@@ -19,11 +39,11 @@ export default class ContestsIndex extends React.Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>ID #</th>
-              <th># Participants</th>
-              <th># Problems</th>
-              <th>Name</th>
-              <th>Date</th>
+              <th><a href="#" onClick={() => this.sortBy('id')}>ID #</a></th>
+              <th><a href="#" onClick={() => this.sortBy('participants')}># Participants</a></th>
+              <th><a href="#" onClick={() => this.sortBy('problems')}># Problems</a></th>
+              <th><a href="#" onClick={() => this.sortBy('id')}>Name</a></th>
+              <th><a href="#" onClick={() => this.sortBy('date')}>Date</a></th>
             </tr>
           </thead>
           <tbody>
