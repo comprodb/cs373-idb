@@ -1,0 +1,38 @@
+**Template**
+
+Users
+	- Rating/Max Rating
+	- Handle
+	- Name
+	- Country
+	- Registration Time
+	- Contests
+	- Problems
+
+Problems
+	- Submissions
+		- Runtime
+		- Memory
+		- Code
+		- Verdict
+	- Name
+	- Problem Type
+	- Contest
+	- Contest problem difficulty (index)
+	- Users
+
+Contests
+	- # Users
+	- # Problems
+	- ID
+	- Date
+	- Name
+	- Division 1/2 or Special
+
+**Sample Data**
+
+Users
+- Staticity
+- arknave
+- dtalamas24
+
