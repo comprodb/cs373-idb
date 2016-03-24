@@ -1,80 +1,190 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://comprodb.apiblueprint.org/
 
-# comprodb
+# ComProDB
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+ComProDB is a database for all things competitive programming.
 
-## Questions Collection [/questions]
+#Group Users
 
-### List All Questions [GET]
+## All Users [/users]
+
+Return a container consisting of all competitive programmers on Codeforces.
+- Each user will consist of the following fields:
+    - handle: The online username identifying this user as a string
+    - name: The first and last name of this user as a string
+    - rank: The string representation of this user's rank (e.g. Specialist, Candidate Master)
+    - rating: An integer representing this user's online ranking similar to Elo rankings
+    - registration_time: A long-integer representing the unix-date of this user's registration
+
+### List All Users [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
+                "handle":"Staticity",
+                "name":"Jaime Rivera"
+                "rank":"specialist",
+                "rating":1530,
+                "registration_time":1458786850,
+            },
+            {
+                "handle":"arknave",
+                "name":"Arnav Sastry",
+                "rank":"expert",
+                "rating":1766,
+                "registration_time":1363182302
+            },
+            {
+                "handle":"dtalamas24",
+                "name":"Daniel Talamas",
+                "rank":"candidate master",
+                "rating":2029,
+                "registration_time":1343162470
+            },
         ]
+        
+## Single User [/users/{handle}]
 
-### Create a New Question [POST]
+Returns a single user object when a string handle is specified.
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
++ Parameters
+    + handle (string) - Unique username of specified user
 
-+ Request (application/json)
+### Get User By Handle [GET]
+
++ Response 200 (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "handle":"arknave",
+            "name":"Arnav Sastry",
+            "rank":"expert",
+            "rating":1766,
+            "registration_time":1363182302
+        }
+        
+
+#Group Contests        
+
+## All Contests [/contests]
+
+
+Return a container consisting of all Codeforces sponsored contests.
+
+- Each contest will consist of the following fields:
+    - id: The unique number of contests preceding this contest
+    - participants: The number users that participated live in this contest
+    - problems: The number of problems in this competition
+    - name: The contest name as a string
+    - date: A long-integer representing the unix-date of this contest's start date
+    
+### List All Contests [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id":379,
+                "participants":12481,
+                "problems":7
+                "name":"Good Bye 2013",
+                "date":1343162470
+            },
+            {
+                "id":477,
+                "participants":5321,
+                "problems":7
+                "name":"Codeforces Round #272",
+                "date":1343532469
+            },
+            {
+                "id":480,
+                "participants":9580,
+                "problems":6
+                "name":"Codeforces Round #274",
+                "date":1335162422
+            },
+        ]
+
+
+## Single Contest [/contests/{contest_id}]
+Returns a single contest object when an integer contest id is specified.
+
++ Parameters
+    + contest_id (number) - Unique id of the specified contest
+
+### Get Contest by ID [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id":480,
+            "participants":9580,
+            "problems":6
+            "name":"Codeforces Round #274",
+            "date":1335162422
         }
 
-+ Response 201 (application/json)
 
-    + Headers
+#Group Problems
 
-            Location: /questions/2
+## All Problems [/problems]
 
-    + Body
+Return a container consisting of all Codeforces contest problems.
 
+- Each problem will consist of the following fields:
+    - name: The name of the problem as a string
+    - index: The index/difficulty of the problem with its respective contest division
+    - contest_id: The unique id of the contest this problem belongs
+    - tags: A list of strings representing the different types of problem strategies that can be used to solve this problem
+    - points: The number of points this problem granted in the past contest
+    
+
+### List All Problems [GET]
+
++ Response 200 (application/json)
+
+        [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+                "name":"Dreamoon and Sets",
+                "index":"B",
+                "contest_id":477,
+                "tags":["math"],
+                "points":300
+            },
+            {
+                "name":"New Year Present",
+                "index":"B",
+                "contest_id":379,
+                "tags":["constructive algorithms", "implementation"],
+                "points":300
+            },
+            {
+                "name":"Riding in a Lift",
+                "index":"C",
+                "contest_id":480,
+                "tags":["dp", "implementation"],
+                "points":600
+            },
+        ]
+
+## Single Problem [/problems/{problem_id}]
+Returns a single problem object when a string problem id is specified.
+
++ Parameters
+    + problem_id (string) - Unique id of the specified problem. 
+    Represented as contest_id followed by problem index. 
+    e.g. 377C - contest 377, problem C.
+
+### Get Problem by ID [GET]
+
++ Response 200 (application/json)
+
+        {
+            "name":"Dreamoon and Sets",
+            "index":"B",
+            "contest_id":477,
+            "tags":["math"],
+            "points":300
+        }
