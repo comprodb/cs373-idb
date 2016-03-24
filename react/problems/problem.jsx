@@ -7,8 +7,14 @@ export default class Problem extends React.Component {
     super(props);
 
     const id = props.params.id;
+
+    let problem;
+    for (problem of problems) {
+      if (problem.id === id) break;
+    }
+
     this.state = {
-      problem: problems[id],
+      problem: problem,
     };
   }
 
