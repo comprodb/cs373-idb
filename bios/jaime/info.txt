@@ -1,4 +1,0 @@
-responsibilities: back-end
-number of commits: 4
-number of issues: 0
-number of unit tests: 0
