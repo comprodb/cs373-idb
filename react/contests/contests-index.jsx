@@ -31,7 +31,7 @@ export default class ContestsIndex extends React.Component {
                 <td>{contest.id}</td>
                 <td>{contest.participants}</td>
                 <td>{contest.problems}</td>
-                <td><Link to={`problems/${contest.id}`}>{contest.name}</Link></td>
+                <td><Link to={`/contests/${contest.id}`}>{contest.name}</Link></td>
                 <td>{new Date(1000 * contest.date).getFullYear()}</td>
               </tr>
             ))}

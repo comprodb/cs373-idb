@@ -28,7 +28,7 @@ export default class UsersIndex extends React.Component {
           <tbody>
             {this.state.users.map((user) => (
               <tr key={user.handle}>
-                <td><Link to={`users/${user.handle}`}>{user.handle}</Link></td>
+                <td><Link to={`/users/${user.handle}`}>{user.handle}</Link></td>
                 <td>{user.name}</td>
                 <td>{user.rank}</td>
                 <td>{user.rating}</td>

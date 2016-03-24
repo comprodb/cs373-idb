@@ -44,7 +44,7 @@ export default class Home extends React.Component {
           </div>
 
           <div className="page-header">
-            <h2>What People Are Saying</h2>
+            <h2>What People Are Saying <i className="fa fa-twitter"></i></h2>
           </div>
 
           <div className="row text-center">

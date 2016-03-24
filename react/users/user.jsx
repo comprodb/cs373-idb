@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import users from '../data/users';
 
@@ -20,9 +21,13 @@ export default class User extends React.Component {
 
   render() {
     const user = this.state.user;
+
+    const date = moment.unix(user.registration_time).format("MMM Do YYYY");
+
     return (
       <div>
         <h1>{user.name}</h1>
+        <p>User since {date}</p>
         <table className="table">
           <thead>
             <tr>
