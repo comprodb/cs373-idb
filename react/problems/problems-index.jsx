@@ -31,8 +31,13 @@ export default class ProblemIndex extends React.Component {
                 <td><Link to={`/problems/${problem.id}`}>{problem.name}</Link></td>
                 <td><Link to={`/contests/${problem.contest_id}`}>{problem.contest_id}</Link></td>
                 <td>{problem.index}</td>
-                <td>{JSON.stringify(problem.tags)}</td>
+                <td>
+                  {problem.tags.map((tag) => (
+                    <p className="label label-default" key={tag}>{tag}</p>
+                  ))}
+                </td>
                 <td>{problem.points}</td>
+
               </tr>
             ))}
           </tbody>
