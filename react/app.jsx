@@ -5,9 +5,6 @@ import { render } from 'react-dom'
 import Navbar from './nav-bar';
 import Home from './home/home';
 
-import About from './about/about';
-import AboutIndex from './about/about-index';
-
 import Users from './users/users';
 import UsersIndex from './users/users-index';
 import User from './users/user';
@@ -19,6 +16,8 @@ import Problem from './problems/problem';
 import Contests from './contests/contests';
 import ContestsIndex from './contests/contests-index';
 import Contest from './contests/contest';
+
+import About from './about/about';
 
 class App extends React.Component {
   render() {
@@ -35,9 +34,6 @@ const router = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="about" component={About}>
-        <IndexRoute component={AboutIndex} />
-      </Route>
       <Route path="users" component={Users}>
         <IndexRoute component={UsersIndex} />
         <Route path=":id" component={User} />
@@ -50,6 +46,7 @@ const router = (
         <IndexRoute component={ContestsIndex} />
         <Route path=":id" component={Contest} />
       </Route>
+      <Route path="about" component={About} />
     </Route>
   </Router>
 );
