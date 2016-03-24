@@ -6,10 +6,15 @@ export default class User extends React.Component {
   constructor(props) {
     super(props);
 
-    // Get the user id param and set the state to that user
     const id = props.params.id;
+
+    let user;
+    for (user of users) {
+      if (user.handle === id) break;
+    }
+
     this.state = {
-      user: users[id],
+      user: user,
     };
   }
 
