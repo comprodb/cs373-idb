@@ -13,34 +13,37 @@ export default class About extends React.Component {
 
   render() {
     return (
-      <div className="col-md-8 col-md-offset-2">
+      <div>
         <h1>Abouts</h1>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Photo</th>
-              <th>Bio</th>
-              <th>Responsibilities</th>
-              <th>Commits</th>
-              <th>Issues</th>
-              <th>Tests</th>
-            </tr>
-          </thead>
-          <tbody>
             {this.state.abouts.map((about) => (
-              <tr key={about.name}>
-                <td>{about.name}</td>
-                <td>{about.photo}</td>
-                <td>{about.bio}</td>
-                <td>{about.responsibilities}</td>
-                <td>{about.commits}</td>
-                <td>{about.issues}</td>
-                <td>{about.tests}</td>
-              </tr>
+          <div>
+				<table className="table">
+                <td>
+				<table className="table">
+					<thead>
+					<td>{about.name}</td>
+					</thead>
+					<tr>
+					<td><img src={about.photo} className="img-responsive" width="400" height="400"/></td>
+					</tr>
+				</table>
+                </td>
+
+
+
+
+              <td>
+				<table className="table table-striped table-hover">
+                <tr><td>Bio</td><td>{about.bio}</td></tr>
+                <tr><td>Responsibilities</td><td>{about.responsibilities}</td></tr>
+                <tr><td>Commits</td><td>{about.commits}</td></tr>
+                <tr><td>Issues</td><td>{about.issues}</td></tr>
+                <tr><td>Tests</td><td>{about.tests}</td></tr>
+				</table>
+              </td>
+				</table>
+          </div>
             ))}
-          </tbody>
-        </table>
       </div>
     );
   }
