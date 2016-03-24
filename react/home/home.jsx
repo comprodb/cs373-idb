@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { TwitterTimeline  } from 'react-twitter-embedded-timeline';
+import { Link } from 'react-router';
 
 export default class Home extends React.Component {
   render() {
@@ -24,20 +24,20 @@ export default class Home extends React.Component {
             </h2>
           </blockquote>
           <div className="page-header">
-            <h2><a className="text-warning" href="/users">Users</a></h2>
+            <h2><Link to="/users" className="text-warning">Users</Link></h2>
           </div>
           <div className="panel-body">
             <h4>Users are the brilliant programmers challenging themselves with new problems and learning from the challenges.</h4>
           </div>
           <div className="page-header">
-            <h2><a className="text-danger" href="/contests">Contests</a></h2>
+            <h2><Link to="/contests" className="text-danger">Contests</Link></h2>
           </div>
           <div className="panel-body">
             <h4>Contests are competitions given during specific time periods with a given set of problems.
               Contestants compete to be the first to solve all the problems correctly and efficiently.</h4>
           </div>
           <div className="page-header">
-            <h2><a className="text-success" href="/problems">Problems</a></h2>
+            <h2><Link to="/problems" className="text-success">Problems</Link></h2>
           </div>
           <div className="panel-body">
             <h4>Contestants compete to be the first to solve all the problems correctly and efficiently.</h4>
