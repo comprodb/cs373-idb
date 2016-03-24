@@ -63,7 +63,7 @@ Problems:
 =========
 {
 	"name":"Dreamoon and Sets",
-	"index":2,
+	"index":"B",
 	"contest_id":477,
 	"tags":["math"],
 	"points":300
@@ -71,7 +71,7 @@ Problems:
 
 {
 	"name":"New Year Present",
-	"index":2,
+	"index":"B",
 	"contest_id":379,
 	"tags":["constructive algorithms", "implementation"],
 	"points":300
@@ -79,7 +79,7 @@ Problems:
 
 {
 	"name":"Riding in a Lift",
-	"index":3,
+	"index":"C",
 	"contest_id":480,
 	"tags":["dp", "implementation"],
 	"points":600
@@ -89,25 +89,25 @@ Contests:
 =========
 
 {
-	"id":379,
-	"participants":12481,
-	"problems":7
-	"name":"Good Bye 2013",
-	"date":"12/30/2013"
+    "id":379,
+    "participants":12481,
+    "problems":7
+    "name":"Good Bye 2013",
+    "date":1343162470
 }
 
 {
-	"id":477,
-	"participants":5321,
-	"problems":7
-	"name":"Codeforces Round #272",
-	"date":"9/2/2014"
+    "id":477,
+    "participants":5321,
+    "problems":7
+    "name":"Codeforces Round #272",
+    "date":1343532469
 }
 
 {
-	"id":480,
-	"participants":9580,
-	"problems":6
-	"name":"Codeforces Round #274",
-	"date":"9/13/2014"
+    "id":480,
+    "participants":9580,
+    "problems":6
+    "name":"Codeforces Round #274",
+    "date":1335162422
 }
