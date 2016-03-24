@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Problems extends React.Component {
+export default class Page extends React.Component {
   render() {
     return (
       <div className="col-md-8 col-md-offset-2">

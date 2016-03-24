@@ -3,17 +3,15 @@ import React from 'react'
 import { render } from 'react-dom'
 
 import Navbar from './nav-bar';
+import Page from './page';
 import Home from './home/home';
 
-import Users from './users/users';
 import UsersIndex from './users/users-index';
 import User from './users/user';
 
-import Problems from './problems/problems';
 import ProblemsIndex from './problems/problems-index';
 import Problem from './problems/problem';
 
-import Contests from './contests/contests';
 import ContestsIndex from './contests/contests-index';
 import Contest from './contests/contest';
 
@@ -34,15 +32,15 @@ const router = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="users" component={Users}>
+      <Route path="users" component={Page}>
         <IndexRoute component={UsersIndex} />
         <Route path=":id" component={User} />
       </Route>
-      <Route path="problems" component={Problems}>
+      <Route path="problems" component={Page}>
         <IndexRoute component={ProblemsIndex} />
         <Route path=":id" component={Problem} />
       </Route>
-      <Route path="contests" component={Contests}>
+      <Route path="contests" component={Page}>
         <IndexRoute component={ContestsIndex} />
         <Route path=":id" component={Contest} />
       </Route>
