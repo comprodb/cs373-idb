@@ -11,16 +11,17 @@ Users
 	- Num Problems Solved (not in model yet)
 
 Problems
-	- Submissions
+	- Contest ID
+	- Index
+	- Name
+	- Tags
+	- Points
+	- Submissions (unused and below)
 		- Runtime
 		- Memory
 		- Code
 		- Verdict
-	- Name
-	- Problem Type
-	- Contest
-	- Contest problem difficulty (index)
-	- Users
+	- Users (unused)
 
 Contests
 	- # Users
@@ -36,48 +37,77 @@ Users:
 ======
 {
 	"handle":"Staticity",
-	"firstName":"Jaime",
-	"lastName":"Rivera",
-	"country":"United States (USA)",
-	"city":"Austin",
-	"organization":"University of Texas at Austin",
-	"contribution":0
+	"name":"Jaime Rivera"
 	"rank":"specialist",
 	"rating":1530,
-	"maxRank":"specialist",
-	"maxRating":1599,
-	"lastOnlineTimeSeconds":1458786850,
-	"registrationTimeSeconds":1375547293
-},
+	"registration_time":1458786850,
+}
 
 {
 	"handle":"arknave",
-	"country":"United States (USA)",
-	"organization":"University of Texas at Austin",
-	"contribution":2,
+	"name":"Arnav Sastry",
 	"rank":"expert",
 	"rating":1766,
-	"maxRank":"candidate master",
-	"maxRating":2031,
-	"lastOnlineTimeSeconds":1458630002,
-	"registrationTimeSeconds":1363182302
-},
+	"registration_time":1363182302
+}
 
 {
 	"handle":"dtalamas24",
-	"firstName":"Daniel",
-	"lastName":"Talamas",
-	"country":"Mexico",
-	"organization":"University of Texas at Austin",
-	"contribution":33,
+	"name":"Daniel Talamas",
 	"rank":"candidate master",
 	"rating":2029,
-	"maxRank":"candidate master",
-	"maxRating":2119,
-	"lastOnlineTimeSeconds":1458779324,
-	"registrationTimeSeconds":1343162470
+	"registration_time":1343162470
 }
 
 Problems:
 =========
+{
+	"name":"Dreamoon and Sets",
+	"index":2,
+	"contest_id":477,
+	"tags":["math"],
+	"points":300
+}
 
+{
+	"name":"New Year Present",
+	"index":2,
+	"contest_id":379,
+	"tags":["constructive algorithms", "implementation"],
+	"points":300
+}
+
+{
+	"name":"Riding in a Lift",
+	"index":3,
+	"contest_id":480,
+	"tags":["dp", "implementation"],
+	"points":600
+}
+
+Contests:
+=========
+
+{
+	"id":379,
+	"participants":12481,
+	"problems":7
+	"name":"Good Bye 2013",
+	"date":"12/30/2013"
+}
+
+{
+	"id":477,
+	"participants":5321,
+	"problems":7
+	"name":"Codeforces Round #272",
+	"date":"9/2/2014"
+}
+
+{
+	"id":480,
+	"participants":9580,
+	"problems":6
+	"name":"Codeforces Round #274",
+	"date":"9/13/2014"
+}
