@@ -19,8 +19,8 @@ module.exports = [
 	},
 	{
 		name: "Jaime Rivera",
-		photo: "",
-		bio: "",
+		photo: "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xlf1/v/t1.0-9/10857937_10153702121469807_2444155415712486700_n.jpg?oh=4c199ee1291b9dc01451365cf1e6fb03&oe=5794EDBE",
+		bio: "Computer Vision Person",
 		responsibilities: "Competitive Programmer",
 		commits: "c",
 		issues: "i",
