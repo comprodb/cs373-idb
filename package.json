@@ -17,7 +17,8 @@
   },
   "scripts": {
     "dist": "browserify $npm_package_config_build_args",
-    "dev": "watchify $npm_package_config_build_args --verbose --debug -p livereactload"
+    "dev": "watchify $npm_package_config_build_args --verbose --debug -p livereactload",
+    "deploy": "docker-compose build && docker-compose down && docker-compose --file docker-compose-prod.yml up -d"
   },
   "repository": {
     "type": "git",
