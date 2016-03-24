@@ -28,7 +28,7 @@ module.exports = [
 	},
 	{
 		name: "Joey Ewbank",
-		photo: "https://lh3.googleusercontent.com/-wRW2XFqiVV0/Vfhf0cz5JmI/AAAAAAAABsk/xDk8_SKW2bkPxJkK-fasUQbrfR9zefoZg/w140-h140-p/nice_pic.jpg",
+		photo: "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/945811_10151593734529228_40224106_n.jpg?oh=d88e7d3e0ad286e2ce45516ae36f8ee6&oe=57813971",
 		bio: "Aspiring Educator, Secondary DotA Person",
 		responsibilities: "Tester",
 		commits: "c",
