@@ -4,6 +4,7 @@ from models import app, db
 import models
 import psycopg2
 import time
+import os.path
 
 # Routes
 @app.route('/')
@@ -14,7 +15,10 @@ def root():
 @app.route('/<path:path>')
 def static_proxy(path):
     # Send files from directory ./static/
-    return app.send_static_file(path)
+    if os.path.exists('./static/' + path):
+      return app.send_static_file(path)
+    else:
+      return app.send_static_file('index.html')
 
 if __name__ == "__main__":
     # Wait until the database is running
