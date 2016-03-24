@@ -19,8 +19,27 @@ export default class User extends React.Component {
   }
 
   render() {
+    const user = this.state.user;
     return (
-      <h1>{this.state.user.name}</h1>
+      <div>
+        <h1>{user.name}</h1>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Handle</th>
+              <th>Rank</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{user.handle}</td>
+              <td>{user.rank}</td>
+              <td>{user.rating}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
