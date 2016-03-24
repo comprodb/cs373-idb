@@ -20,4 +20,4 @@ ADD . /code
 RUN npm run dist
 
 # Run the server
-CMD python app.py
+CMD python ./app.py
