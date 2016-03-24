@@ -85,3 +85,8 @@ ENV/
 
 # Spyder project settings
 .spyderproject
+
+# Node stuff
+node_modules/
+static/bundle.js
+npm-debug.log

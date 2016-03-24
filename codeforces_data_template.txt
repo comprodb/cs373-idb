@@ -1,0 +1,113 @@
+**Template**
+
+Users
+	- Rating
+	- Rank
+	- Handle
+	- Name
+	- Registration Time
+	- Country (not in model yet)
+	- Num Contests (not in model yet)
+	- Num Problems Solved (not in model yet)
+
+Problems
+	- Contest ID
+	- Index
+	- Name
+	- Tags
+	- Points
+	- Submissions (unused and below)
+		- Runtime
+		- Memory
+		- Code
+		- Verdict
+	- Users (unused)
+
+Contests
+	- # Users
+	- # Problems
+	- ID
+	- Date
+	- Name
+	- Division 1/2 or Special
+
+**Sample Data**
+
+Users:
+======
+{
+	"handle":"Staticity",
+	"name":"Jaime Rivera"
+	"rank":"specialist",
+	"rating":1530,
+	"registration_time":1458786850,
+}
+
+{
+	"handle":"arknave",
+	"name":"Arnav Sastry",
+	"rank":"expert",
+	"rating":1766,
+	"registration_time":1363182302
+}
+
+{
+	"handle":"dtalamas24",
+	"name":"Daniel Talamas",
+	"rank":"candidate master",
+	"rating":2029,
+	"registration_time":1343162470
+}
+
+Problems:
+=========
+{
+	"name":"Dreamoon and Sets",
+	"index":"B",
+	"contest_id":477,
+	"tags":["math"],
+	"points":300
+}
+
+{
+	"name":"New Year Present",
+	"index":"B",
+	"contest_id":379,
+	"tags":["constructive algorithms", "implementation"],
+	"points":300
+}
+
+{
+	"name":"Riding in a Lift",
+	"index":"C",
+	"contest_id":480,
+	"tags":["dp", "implementation"],
+	"points":600
+}
+
+Contests:
+=========
+
+{
+    "id":379,
+    "participants":12481,
+    "problems":7
+    "name":"Good Bye 2013",
+    "date":1343162470
+}
+
+{
+    "id":477,
+    "participants":5321,
+    "problems":7
+    "name":"Codeforces Round #272",
+    "date":1343532469
+}
+
+{
+    "id":480,
+    "participants":9580,
+    "problems":6
+    "name":"Codeforces Round #274",
+    "date":1335162422
+}
