@@ -3,7 +3,7 @@ FILES :=                              \
     makefile                          \
     IDB1.log                          \
     models.html                       \
-    model.py
+    models.py
 
 check:
 	@not_found=0;                                 \
