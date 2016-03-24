@@ -16,6 +16,10 @@ import Problems from './problems/problems';
 import ProblemsIndex from './problems/problems-index';
 import Problem from './problems/problem';
 
+import Contests from './contests/contests';
+import ContestsIndex from './contests/contests-index';
+import Contest from './contests/contest';
+
 class App extends React.Component {
   render() {
     return (
@@ -41,6 +45,10 @@ const router = (
       <Route path="problems" component={Problems}>
         <IndexRoute component={ProblemsIndex} />
         <Route path=":id" component={Problem} />
+      </Route>
+      <Route path="contests" component={Contests}>
+        <IndexRoute component={ContestsIndex} />
+        <Route path=":id" component={Contest} />
       </Route>
     </Route>
   </Router>

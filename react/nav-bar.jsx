@@ -20,6 +20,7 @@ export default class NavBar extends React.Component {
             <ul className="nav navbar-nav">
               <li><IndexLink to="/users" activeClassName="active">Users</IndexLink></li>
               <li><IndexLink to="/problems" activeClassName="active">Problems</IndexLink></li>
+              <li><IndexLink to="/contests" activeClassName="active">Contests</IndexLink></li>
             </ul>
           </div>
         </div>
