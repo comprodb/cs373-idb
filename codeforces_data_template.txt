@@ -6,8 +6,8 @@ Users
 	- Name
 	- Country
 	- Registration Time
-	- Contests
-	- Problems
+	- Num Contests (not in model yet)
+	- Num Problems Solved (not in model yet)
 
 Problems
 	- Submissions
