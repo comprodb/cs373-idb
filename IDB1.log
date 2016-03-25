@@ -1,3 +1,389 @@
+commit df5fa82c6540575286d68ec2306458f4198db46f
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Mar 24 19:18:09 2016 -0500
+
+    Fix about global statistics
+
+commit 79f1c8add343a357262665fb3bb809fcf25fe97a
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 18:57:12 2016 -0500
+
+    Override docker command for local docker-compose file
+
+commit f13ccc345343c9c6f017a58f659629c67c698d3b
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 18:27:14 2016 -0500
+
+    Remove deprecated bios dir
+
+commit 8b27b8c60d0479d220d35c616ea9374a4d313238
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 18:09:41 2016 -0500
+
+    Fix codeforces link
+
+commit bf637d78ec8f8b9c921fd57ca5826f3aefa05e65
+Author: jdewbank <jdewbank@gmail.com>
+Date:   Thu Mar 24 18:05:51 2016 -0500
+
+    Uploaded real picture, not thumbnail. Oops.
+
+commit 162f464887ac96ceeca9bdcb03beb26eeea5a1e0
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 17:21:43 2016 -0500
+
+    Add external codeforces links
+
+commit a6d38bf8947385ff41e52650207d315845a835e4
+Author: jdewbank <jdewbank@gmail.com>
+Date:   Thu Mar 24 16:53:26 2016 -0500
+
+    Added UML.pdf
+
+commit 3de58ac47e79f006ea7b69b008456668c9d7fe68
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 16:44:22 2016 -0500
+
+    Redesign user page
+
+commit ad63689f975e121eb3f0beb099fe6c6249193e10
+Author: jdewbank <jdewbank@gmail.com>
+Date:   Thu Mar 24 16:26:27 2016 -0500
+
+    Updated about.js with Joey's Stuff
+
+commit e38e722a9ec276928ebfc8593ca8ed9e6f2962e1
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 15:44:47 2016 -0500
+
+    Add about me for Robert
+
+commit 70d8b9893443bb3631b933d812327f043b3b82da
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 15:18:10 2016 -0500
+
+    Sort contests
+
+commit c72b9a3d0488c8a6295c565418cee4855c96c81d
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 14:32:23 2016 -0500
+
+    Add sorting to users table
+
+commit cfcd385fbf1f28df9bda0753ca76fdb6d1ac2ad3
+Author: Staticity <jaime@wireless-10-147-146-162.public.utexas.edu>
+Date:   Thu Mar 24 14:12:56 2016 -0500
+
+    Added Jaime's photo/bio
+
+commit 79840ba963373e6d55fae1af5438180da6d286c6
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 13:45:17 2016 -0500
+
+    fix tabbing
+
+commit 5b9556fc556467b6f7e11d7d4d8743834456fb95
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 13:24:25 2016 -0500
+
+    Add sorting to problems table
+
+commit e6cc38eddfce0baa7d4fc5355fbd67ae4803c508
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Mar 24 13:08:54 2016 -0500
+
+    Add other information on about page
+
+commit d4d79426d4832f242f47eb3c409b4377dbfb5aff
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 12:20:18 2016 -0500
+
+    Cleanup index views
+
+commit 41860a249c626968506025c3fc9be9a944959050
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 12:08:58 2016 -0500
+
+    Views cleanup and show more data
+
+commit d3da37864b72a2356e2cf16e0262e30f3b5350a1
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 12:08:44 2016 -0500
+
+    Expose flask as port 80
+
+commit 02cf40b050aaca674837ffbfa7b900d358d5230d
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Mar 24 12:02:13 2016 -0500
+
+    Make travis pass
+
+commit d3fc9e277c1df68ea823237f364e86a632a9e2fc
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Mar 24 11:00:26 2016 -0500
+
+    Add columns to models
+
+commit 34fc2617eb7f3fbf112557cddcbeaa9f4e06f4a5
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 10:50:26 2016 -0500
+
+    Add key to about map
+
+commit 14b7ddbfd875ca7494ec896efddca5f7930b5923
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 10:46:26 2016 -0500
+
+    Add deploy task to npm
+
+commit 402c159211c258e6de3b2690e24df43af87ee8ed
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 10:40:13 2016 -0500
+
+    Clean up about page
+
+commit b27383054c834c9d8bd59e33d6f0226d4e8f9e1c
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Mar 24 10:23:15 2016 -0500
+
+    Add about page
+
+commit 19ab82eb28c3eb5e64e7eb040e5062f1acc65598
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 10:22:49 2016 -0500
+
+    Remove accidentally added file
+
+commit 1b6036bd1305afd4ef0d37f7a86a68a2ff511a28
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 10:11:08 2016 -0500
+
+    Consolidate and abstract
+
+commit 057f243d6497b8a94000b18f32dae016d0777280
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 10:02:51 2016 -0500
+
+    Change up how about page is rendered in
+
+commit 9c8c75c57c525e1ebf843efd3552513e6dc314c7
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 09:53:53 2016 -0500
+
+    Add contests
+
+commit c2070ef34b62beb3dfe200661f0dd8a7e54c1fcf
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 09:45:19 2016 -0500
+
+    Use Link in home page
+
+commit b577f5e2ff5617edff8f022a64b958cb2f1dab92
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 09:40:49 2016 -0500
+
+    Clean up home
+
+commit 9c8b085d2d03eee53e8213f259715b2af70cb6b2
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 01:26:02 2016 -0500
+
+    Working docker configs
+
+commit d49140bb71be2d79f61189cce3402b3dcbffeb6a
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Mar 24 00:50:56 2016 -0500
+
+    Skeleton for about
+
+commit 169a9e099f11f7a7d1d1c52e841d9d277ca28c36
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Mar 24 00:30:20 2016 -0500
+
+    Simple splash page
+
+commit 6e7d770a16d81e69b930972dce17cbbfa8d69c11
+Author: Joseph Ewbank <jdewbank@gmail.com>
+Date:   Thu Mar 24 00:21:28 2016 -0500
+
+    Added our version of apiary.apib
+
+commit 17a1ff76c56476764288671cab6da5a0320800c8
+Merge: 6543c90 5466928
+Author: Joseph Ewbank <jdewbank@gmail.com>
+Date:   Thu Mar 24 00:13:10 2016 -0500
+
+    Merge branch 'dev' of https://github.com/comprodb/cs373-idb into dev
+
+commit 6543c909c28e87edab64b8f69793f6e04f4dadd6
+Author: Joseph Ewbank <jdewbank@gmail.com>
+Date:   Thu Mar 24 00:12:09 2016 -0500
+
+    Added 17 tests (18 total) and updated models
+
+commit 5466928814707e5d4469b23513432d0e08b8968e
+Author: Ruven Rivera <jaime@cs.utexas.edu>
+Date:   Wed Mar 23 23:52:36 2016 -0500
+
+    fixed data field for contests
+
+commit a872ae70137aabfe69f3c8ae9d0e7f8dcd5d2519
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 23:48:05 2016 -0500
+
+    Finish basic problems view
+
+commit 17e204de0b789576783edb13f5b20027624abc8b
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 23:37:17 2016 -0500
+
+    Finished basic users view
+
+commit f53f8e04394dfdd8a8607294fccfb5ecb1d92d23
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 23:30:35 2016 -0500
+
+    Get users index looking good
+
+commit b6ce9890565e7f555a8772ceddbccf03a76354e8
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 23:13:19 2016 -0500
+
+    Add dummy data and problems
+
+commit 48477cdcf4c7c5490b2414bdb604837a02bb8996
+Author: Ruven Rivera <jaime@cs.utexas.edu>
+Date:   Wed Mar 23 22:56:53 2016 -0500
+
+    Finished json samples
+
+commit 1185491574833ac4a94c4100524b5fb5a3fd25ed
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 22:48:47 2016 -0500
+
+    Add user data skeleton
+
+commit 6d6ebc7d7d98aadbf10a4e7294c9e720ab462814
+Author: Ruven Rivera <jaime@cs.utexas.edu>
+Date:   Wed Mar 23 22:41:08 2016 -0500
+
+    Added biography directories
+
+commit c0cceee66a79b48f9537eba23bfb4e34e6ab3cc8
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 22:33:25 2016 -0500
+
+    Server all files index if not found in static
+
+commit e087f400a3ff2a6bdb6e3b31b36225fd979995c1
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 22:28:25 2016 -0500
+
+    Work on users page and etc.
+
+commit 55856cbac50e5d256af67b96978adca0fe9c2d2c
+Author: Ruven Rivera <jaime@cs.utexas.edu>
+Date:   Wed Mar 23 22:04:22 2016 -0500
+
+    Added user json data
+
+commit 3b8b83d6beb521d8aff52dd6bf9aee28f7979f14
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 21:54:28 2016 -0500
+
+    A splash of style
+
+commit 0be7d2fc683a6f5122be488ee4ebfccbdc8cd3e3
+Merge: 417378b 3555333
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Wed Mar 23 21:42:58 2016 -0500
+
+    Merge branch 'dev' of github.com:comprodb/cs373-imdb into dev
+
+commit 417378b3d4d9d2973fa75d4433eda92a1cf5c34c
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Wed Mar 23 21:42:47 2016 -0500
+
+    Keep compose ports in line with app port
+
+commit 355533394ec064720650d77a5f5ccf398301daf0
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 21:34:37 2016 -0500
+
+    Add frontend config to dockerfile
+
+commit 5be5ce618a7c76b843899f31d5d6eb5e7886982b
+Merge: 4150e46 5e7e900
+Author: Ruven Rivera <jaime@cs.utexas.edu>
+Date:   Wed Mar 23 21:27:50 2016 -0500
+
+    Merge branch 'dev' of https://github.com/comprodb/cs373-idb into dev
+
+commit 4150e46d860907853d7cf46f18f6a3f768276973
+Author: Ruven Rivera <jaime@cs.utexas.edu>
+Date:   Wed Mar 23 21:27:43 2016 -0500
+
+    labeled fields that aren't in model yet
+
+commit 5e7e90014ed0a8ebafe8eb94ba6a5b24b96fce6f
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 21:25:24 2016 -0500
+
+    Forgot to add index file
+
+commit 9e3684b52a0ea405b825ce51e9d2c94f961c2de8
+Merge: 8627231 94ffde2
+Author: Ruven Rivera <jaime@cs.utexas.edu>
+Date:   Wed Mar 23 21:24:15 2016 -0500
+
+    Merge branch 'dev' of https://github.com/comprodb/cs373-idb into dev
+
+commit 86272312c3ad35d16230defa0046e17273db4586
+Author: Ruven Rivera <jaime@cs.utexas.edu>
+Date:   Wed Mar 23 21:24:04 2016 -0500
+
+    Added tempalte for sample data/pillars
+
+commit 94ffde29ed2f7bdb6e5b6f431c59f8ab57cfcad2
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Wed Mar 23 21:23:41 2016 -0500
+
+    Added React and React setup
+
+commit 714e14e160495fe9a7c9adba7902a3d0bc902c9f
+Merge: f8b59bd 1a73c64
+Author: Tres Popp <tpopp@cs.utexas.edu>
+Date:   Wed Mar 23 15:39:56 2016 -0500
+
+    Merge branch 'dev' of github.com:comprodb/cs373-idb into dev
+
+commit f8b59bd7ce6bd2ae50cdb9a2bd8b28cffb356883
+Author: Theodore Popp <tpopp@cs.utexas.edu>
+Date:   Wed Mar 23 15:38:51 2016 -0500
+
+    Added Submission model
+
+commit 1a73c648b8d1ff5a0a6ccef449c67803090be641
+Author: Joseph Ewbank <jdewbank@gmail.com>
+Date:   Wed Mar 23 15:08:41 2016 -0500
+
+    added a test
+
+commit 13795abf8cb6bedfe8d6c045a0463bca43888286
+Author: Theodore Popp <tpopp@cs.utexas.edu>
+Date:   Wed Mar 23 14:03:07 2016 -0500
+
+    Allow config.py to be changed
+
+commit c71d571316b4eafaa4178ec27b23dcba2bf8ae03
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Mar 22 19:17:51 2016 -0500
+
+    Add basic models.py
+    
+    - Add version 1 of models.py.
+    - fix strange docker problems revolving around flask and root files.
+
 commit 3d4a71f6b69a1cbf9387ce379a295b12d4809571
 Author: Tres Popp <theodore.popp3@gmail.com>
 Date:   Mon Mar 21 16:32:29 2016 -0500

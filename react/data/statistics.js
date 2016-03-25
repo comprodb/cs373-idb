@@ -1,5 +1,5 @@
 module.exports = {
-	commits: 55,
+	commits: 68,
 	issues: 15,
 	tests: 18,
 	apiary: 'http://docs.comprodb1.apiary.io/#reference/users/all-users',
