@@ -48,11 +48,11 @@ export default class About extends React.Component {
           <div className="row panel-body">
             <div className="col-md-6">
               <h3>Commits</h3>
-              <p><a href={statistics.commits}>{statistics.commits}</a></p>
+              <p>{statistics.commits}</p>
               <h3>Issues</h3>
-              <p><a href={statistics.issues}>{statistics.issues}</a></p>
+              <p>{statistics.issues}</p>
               <h3>Tests</h3>
-              <p><a href={statistics.tests}>{statistics.tests}</a></p>
+              <p>{statistics.tests}</p>
               <h3>Apiary</h3>
               <p><a href={statistics.apiary}>{statistics.apiary}</a></p>
               <h3>Github Issues</h3>
