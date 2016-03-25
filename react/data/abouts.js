@@ -30,8 +30,8 @@ module.exports = [
 		name: "Joey Ewbank",
 		photo: "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/945811_10151593734529228_40224106_n.jpg?oh=d88e7d3e0ad286e2ce45516ae36f8ee6&oe=57813971",
 		bio: "Aspiring Educator, Secondary DotA Person",
-		responsibilities: "Tester",
-		commits: "6",
+		responsibilities: "Testing, Documentation",
+		commits: "7",
 		issues: "3",
 		tests: "18",
 	}
