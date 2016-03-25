@@ -1,3 +1,21 @@
+commit 0462700e5a1c3bba787c9a26d0a622b62d390448
+Author: jdewbank <jdewbank@gmail.com>
+Date:   Thu Mar 24 20:07:40 2016 -0500
+
+    Update abouts.js
+
+commit 30f6dd582c2e939efb234849e736008bc3640e42
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 19:43:17 2016 -0500
+
+    Fix tabbing
+
+commit 5bab93828e73c6ebdd83672eb9edc134fde2a580
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Mar 24 19:40:51 2016 -0500
+
+    Update log and finish about information
+
 commit df5fa82c6540575286d68ec2306458f4198db46f
 Author: Tres Popp <theodore.popp3@gmail.com>
 Date:   Thu Mar 24 19:18:09 2016 -0500

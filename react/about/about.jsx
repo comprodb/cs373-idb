@@ -14,10 +14,12 @@ export default class About extends React.Component {
   }
 
   render() {
+    const { abouts, statistics } = this.state;
+
     return (
       <div className="col-md-8 col-md-offset-2">
         <h1 className="text-center">About Us</h1>
-        {this.state.abouts.map((about) => (
+        {abouts.map((about) => (
           <div className="panel panel-default" key={about.name}>
             <div className="panel-heading">
               <h2>{about.name}</h2>
@@ -46,25 +48,25 @@ export default class About extends React.Component {
           <div className="row panel-body">
             <div className="col-md-6">
               <h3>Commits</h3>
-              <p>{this.state.statistics.commits}</p>
+              <p><a href={statistics.commits}>{statistics.commits}</a></p>
               <h3>Issues</h3>
-              <p>{this.state.statistics.issues}</p>
+              <p><a href={statistics.issues}>{statistics.issues}</a></p>
               <h3>Tests</h3>
-              <p>{this.state.statistics.tests}</p>
+              <p><a href={statistics.tests}>{statistics.tests}</a></p>
               <h3>Apiary</h3>
-              <p>{this.state.statistics.apiary}</p>
+              <p><a href={statistics.apiary}>{statistics.apiary}</a></p>
               <h3>Github Issues</h3>
-              <p>{this.state.statistics.tracker}</p>
+              <p><a href={statistics.tracker}>{statistics.tracker}</a></p>
               <h3>Github Repo</h3>
-              <p>{this.state.statistics.repo}</p>
+              <p><a href={statistics.repo}>{statistics.repo}</a></p>
               <h3>Github Wiki</h3>
-              <p>{this.state.statistics.wiki}</p>
+              <p><a href={statistics.wiki}>{statistics.wiki}</a></p>
             </div>
             <div className="col-md-6">
               <h3>Data Sources</h3>
               <p><a href="http://www.codeforces.com/api/help">www.codeforces.com/api/help</a></p>
               <h3>Obtaining Data</h3>
-              <p>{this.state.statistics.data_source_description}</p>
+              <p>{statistics.data_source_description}</p>
               <h3>Tools</h3>
               <ul>
                 <li>ReactJS</li>
