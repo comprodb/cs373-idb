@@ -1,5 +1,6 @@
 from config import SQLALCHEMY_DATABASE_URI
-from models import app, db
+from flask import jsonify, request
+from models import app, db, User
 
 import models
 import psycopg2
@@ -12,6 +13,19 @@ def root():
     # Send default home page
     return app.send_static_file("index.html")
 
+@app.route('/api/user/get')
+def user_get( ):
+
+    # TODO add error handling for bad handles
+    handle = request.args.get('handle')
+    user = db.session.query(User).get(handle)
+    return jsonify(**user.to_dict())
+
+@app.route('/api/user/list')
+def user_list ( ):
+    # TODO return all user data ( possible filtered or limited )
+    pass
+
 @app.route('/<path:path>')
 def static_proxy(path):
     # Send files from directory ./static/
@@ -19,6 +33,7 @@ def static_proxy(path):
       return app.send_static_file(path)
     else:
       return app.send_static_file('index.html')
+
 
 if __name__ == "__main__":
     # Wait until the database is running

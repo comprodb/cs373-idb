@@ -38,6 +38,15 @@ class User(db.Model):
     def __repr__(self):
         return self.handle
 
+    def to_dict ( self ) :
+        return {
+            'handle': self.handle,
+            'name': self.name,
+            'rank': self.rank,
+            'rating': self.rating,
+            'registration_time': self.registration_time,
+        }
+
 
 class Contest(db.Model):
     """Codeforces contest
