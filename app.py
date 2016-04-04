@@ -1,10 +1,13 @@
 from config import SQLALCHEMY_DATABASE_URI
 from models import app, db
+from blueprints.contests import contests
 
 import models
 import psycopg2
 import time
 import os.path
+
+app.register_blueprint(contests, url_prefix='/api/contests')
 
 # Routes
 @app.route('/')

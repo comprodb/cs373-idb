@@ -2,16 +2,26 @@ import React from 'react';
 import { Link } from 'react-router';
 import moment from 'moment';
 
-import contests from '../data/contests';
-
 export default class ContestsIndex extends React.Component {
   constructor() {
     super();
-    this.state = {
-      contests: contests,
-    };
+    this.state = { contests: [] };
 
+    this.loadContests = this.loadContests.bind(this);
     this.sortBy = this.sortBy.bind(this);
+
+    this.loadContests();
+  }
+
+  loadContests() {
+    fetch('/api/contests/').then((response) => {
+      if (response.status >= 400) {
+        throw new Error("Bad response from server");
+      }
+      return response.json();
+    }).then(({ data }) => {
+      this.setState({ contests: data });
+    });
   }
 
   sortBy(field) {

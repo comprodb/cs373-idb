@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import moment from 'moment';
 
-import contests from '../data/contests';
 import problems from '../data/problems';
 
 export default class Contest extends React.Component {
@@ -11,13 +10,8 @@ export default class Contest extends React.Component {
 
     const id = props.params.id;
 
-    let contest;
-    for (contest of contests) {
-      if (contest.id == id) break;
-    }
-
     this.state = {
-      contest: contest,
+      contest: null,
     };
   }
 
