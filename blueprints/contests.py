@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from models import db, Contest
+from models import db, Contest, Problem
 
 contests = Blueprint('contests', __name__)
 
@@ -73,5 +73,10 @@ def root( ):
 
 @contests.route('/<int:id>')
 def get_contest ( id ):
-    contest = db.session.query(Contest).get( id )
-    return jsonify(data=contest.to_dict())
+    contest = db.session.query(Contest).get(id)
+    result = contest.to_dict()
+
+    query = db.session.query(Problem).filter( Problem.contest_id == contest.id )
+
+    result['contest_problems'] = [ i.to_dict() for i in query.all() ]
+    return jsonify(data=result)

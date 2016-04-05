@@ -1,8 +1,9 @@
-from config import SQLALCHEMY_DATABASE_URI
-from models import User, Contest, Problem, Submission, db
+from config import SQLALCHEMY_DATABASE_URI, DEBUG_DATABASE_URI
+from models import User, Contest, Problem, Submission, db, app
 from sqlalchemy.orm import sessionmaker
 
 import requests
+import sys
 
 # TODO : add rest of comments and doc strings
 
@@ -82,6 +83,8 @@ def get_submissions ( user_names ):
 
 if __name__ == "__main__" :
     # create a session, fetch codeforces data, and update database
+    if "debug" in sys.argv:
+        app.config["SQLALCHEMY_DATABASE_URI"] = DEBUG_DATABASE_URI
     db.create_all()
 
     Session = sessionmaker(bind=db.engine)
