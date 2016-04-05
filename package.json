@@ -25,6 +25,8 @@
     "url": "git+https://github.com/comprodb/cs373-idb.git"
   },
   "dependencies": {
+    "babel-polyfill": "^6.7.4",
+    "isomorphic-fetch": "^2.2.1",
     "moment": "^2.12.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
