@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from models import db, User
 
 users = Blueprint('users', __name__)
@@ -33,7 +33,42 @@ def root():
     order = request.args.get('order')
     page = request.args.get('page')
 
-    return jsonify(data=USERS)
+    query = db.session.query(User)
+
+    offset = 0
+
+    sort_by = None
+
+    if sort is not None :
+        if sort == "handle" :
+            sort_by = User.handle
+        elif sort == "rank" :
+            sort_by = User.rank
+        elif sort == "rating" :
+            sort_by = User.rating
+        elif sort == "registration_time" :
+            sort_by = User.registration_time
+        else :
+            sort_by = User.name
+
+    if order is not None and order == "desc":
+        sort_by = sort_by.desc()
+
+
+    if page is None :
+        page = 1
+    else :
+        page = int(page)
+
+    page -= 1
+    offset = int(page) * 20
+    end = offset + 20
+
+    query = query.order_by(sort_by).slice(offset, end)
+
+    result = query.all()
+
+    return jsonify(data=[ i.to_dict() for i in result ])
 
 @users.route('/<handle>')
 def get_user ( handle ):

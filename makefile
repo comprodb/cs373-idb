@@ -28,7 +28,7 @@ check:
 
 clean:
 	rm -f  *.pyc
-	sudo rm -rf __pycache__
+	sudo rm -rf __pycache__ */__pycache__
 
 config:
 	git config -l
