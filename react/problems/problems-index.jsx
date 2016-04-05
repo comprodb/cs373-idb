@@ -1,18 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import problems from '../data/problems';
-
 export default class ProblemIndex extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      problems: problems,
+      problems: [],
       sorted_by: null,
     };
 
     this.sortBy = this.sortBy.bind(this);
+    this.loadProblems = this.loadProblems.bind(this);
+
+    this.loadProblems();
+  }
+
+  loadProblems() {
+    fetch('/api/problems/').then((response) => {
+      if (response.status >= 400) {
+        throw new Error("Bad response from server");
+      }
+      return response.json();
+    }).then(({ data }) => {
+      this.setState({ problems: data });
+    });
   }
 
   sortBy(field) {
