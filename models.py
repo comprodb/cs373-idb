@@ -2,6 +2,8 @@ from config import SQLALCHEMY_DATABASE_URI
 from flask import Flask, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
 
+import ast
+
 # Create Flask server
 app = Flask(__name__)
 
@@ -80,13 +82,22 @@ class Contest(db.Model):
     def __repr__(self):
         return self.name
 
+    def to_dict ( self ) :
+        return {
+            "id" : self.id,
+            "participants" : self.num_users,
+            "problems" : self.num_problems,
+            "name" : self.name,
+            "date" : self.date,
+        }
+
 class Problem(db.Model):
     __tablename__ = "PROBLEM"
     contest_id = db.Column(db.Integer, primary_key=True)
     """Contest that the problem is part of.
 
     With index, forms a unique id"""
-    index = db.Column(db.Text, primary_key=True)
+    contest_index = db.Column(db.Text, primary_key=True)
     """Index into contest. With contest_id, forms a unique id"""
 
     name = db.Column(db.Text)
@@ -98,15 +109,25 @@ class Problem(db.Model):
     points = db.Column(db.Float)
     """Value of the problem in the competition"""
 
-    def __init__(self, contest_id, index, name, tags, points):
+    def __init__(self, contest_id, contest_index, name, tags, points):
         self.contest_id = contest_id
-        self.index = index
+        self.contest_index = contest_index
         self.name = name
         self.tags = tags
         self.points = points
 
     def __repr__(self):
         return self.name
+
+    def to_dict ( self ) :
+        return {
+            "id" : str(self.contest_id) + self.contest_index,
+            "name" : self.name,
+            "index" : self.contest_index,
+            "contest_id" : self.contest_id,
+            "tags" : ast.literal_eval(self.tags),             # NOTE: please forgive me for this
+            "points" : self.points,
+        }
 
 
 class Submission(db.Model):
@@ -118,7 +139,7 @@ class Submission(db.Model):
     """Contest that the problem is part of.
 
     With index, forms a unique id"""
-    problem_index = db.Column(db.Text)
+    contest_index = db.Column(db.Text)
     """Index into contest.
 
     With contest_id, forms a unique id"""
@@ -132,10 +153,10 @@ class Submission(db.Model):
                                            "SKIPPED", "TESTING", "REJECTED", "UNKNOWN", name="verdict"))
     """Result of submission"""
 
-    def __init__(self, submission_id, contest_id, problem_index, who, verdict):
+    def __init__(self, submission_id, contest_id, contest_index, who, verdict):
         self.submission_id = submission_id
         self.contest_id = contest_id
-        self.problem_index = problem_index
+        self.contest_index = contest_index
         self.who = who
         self.verdict = verdict
 

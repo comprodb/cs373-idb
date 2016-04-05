@@ -1,4 +1,5 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
+from models import db, Contest
 
 contests = Blueprint('contests', __name__)
 
@@ -27,5 +28,15 @@ CONTESTS = [
 ]
 
 @contests.route('/')
-def root():
+def root( ):
+    # get parameters
+    sort = request.args.get('sort')
+    order = request.args.get('order')
+    page = request.args.get('page')
+
     return jsonify(data=CONTESTS)
+
+@contests.route('/<int:id>')
+def get_contest ( id ):
+    contest = db.session.query(Contest).get( id )
+    return jsonify(data=contest.to_dict())

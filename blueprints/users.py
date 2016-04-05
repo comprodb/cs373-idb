@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify
+from models import db, User
 
 users = Blueprint('users', __name__)
 USERS = [
@@ -27,4 +28,14 @@ USERS = [
 
 @users.route('/')
 def root():
+    # get parameters
+    sort = request.args.get('sort')
+    order = request.args.get('order')
+    page = request.args.get('page')
+
     return jsonify(data=USERS)
+
+@users.route('/<handle>')
+def get_user ( handle ):
+    user = db.session.query(User).get(handle)
+    return jsonify(data=user.to_dict())

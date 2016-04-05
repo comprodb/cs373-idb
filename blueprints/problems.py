@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify
+from models import db, Problem
 
 problems = Blueprint('problems', __name__)
 PROBLEMS = [
@@ -30,4 +31,14 @@ PROBLEMS = [
 
 @problems.route('/')
 def root():
+    # get parameters
+    sort = request.args.get('sort')
+    order = request.args.get('order')
+    page = request.args.get('page')
+
     return jsonify(data=PROBLEMS)
+
+@problems.route('/<int:contest_id>/<index>')
+def get_problem ( contest_id, index ):
+    problem = db.session.query(Problem).get( ( contest_id, index ) )
+    return jsonify(data=problem.to_dict())
