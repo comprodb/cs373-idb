@@ -1,9 +1,10 @@
-from config import SQLALCHEMY_DATABASE_URI
+from config import SQLALCHEMY_DATABASE_URI, DEBUG_DATABASE_URI
 from flask import jsonify, request
 from models import app, db, User
 
 import models
 import psycopg2
+import sys
 import time
 import os.path
 
@@ -38,13 +39,16 @@ def static_proxy(path):
 if __name__ == "__main__":
     # Wait until the database is running
     db_down = True
-    while db_down:
-        try:
-            psycopg2.connect(SQLALCHEMY_DATABASE_URI).close()
-            db_down = False
-        except:
-            time.sleep(1)
-            continue
+    if 'debug' in sys.argv:
+        app.config["SQLALCHEMY_DATABASE_URI"] = DEBUG_DATABASE_URI
+    else:
+        while db_down:
+            try:
+                psycopg2.connect(SQLALCHEMY_DATABASE_URI).close()
+                db_down = False
+            except:
+                time.sleep(1)
+                continue
 
     # Create any missing tables
     db.create_all()
