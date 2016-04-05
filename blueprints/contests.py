@@ -24,7 +24,7 @@ CONTESTS = [
         'name': 'Codeforces Round #274',
         'date': 1335162422
     }
-];
+]
 
 @contests.route('/')
 def root():
