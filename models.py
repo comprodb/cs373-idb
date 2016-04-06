@@ -1,6 +1,7 @@
 from config import SQLALCHEMY_DATABASE_URI
 from flask import Flask, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import relationship
 
 import ast
 
@@ -69,15 +70,15 @@ class Contest(db.Model):
     num_problems = db.Column(db.Integer)
     """Number of problems in the contest"""
 
-    def __init__(self, id, name, date=None, num_users=None, num_problems=None):
+    #problem_id = db.Column(db.Text, db.ForeignKey("PROBLEM.contest_index"))
+    #problem =  relationship("Problem")
+
+    def __init__(self, id, name, date=0, num_users=0, num_problems=0):
         self.id = id
         self.name = name
-        if date is not None:
-            self.date = date
-        if num_users is not None:
-            self.num_users = num_users
-        if num_problems is not None:
-            self.num_problems = num_problems
+        self.date = date
+        self.num_users = num_users
+        self.num_problems = num_problems
 
     def __repr__(self):
         return self.name

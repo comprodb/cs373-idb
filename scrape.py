@@ -19,27 +19,17 @@ def user_from_data ( data ) :
         return User (data["handle"], "{} {}".format(data["firstName"], data["lastName"]),
                      data["rank"], data["rating"], data["registrationTimeSeconds"])
     else :
-        return User (data["handle"], "", data["rank"], data["rating"],
+        return User (data["handle"], "Unknown", data["rank"], data["rating"],
                      data["registrationTimeSeconds"])
 
 def contest_from_data ( data ) :
-    # TODO: get rest of contest data (need to generate some)
-    # TODO: Allow default values for optional
-    return Contest(data['id'], data["name"])
+    return Contest(data['id'], data["name"], data.get('startTimeSeconds', 0))
 
 def problem_from_data ( data ) :
-    # TODO: give points a default
-    if "points" in data:
-        return Problem(data["contestId"], data["index"], data["name"], str(data["tags"]), data["points"])
-    else:
-        return Problem(data["contestId"], data["index"], data["name"], str(data["tags"]), -1)
+    return Problem(data["contestId"], data["index"], data["name"], str(data["tags"]), data.get("points", 0))
 
 def submission_from_data ( user, data ) :
-    # TODO: give verdict a default
-    if "verdict" in data :
-        return Submission(data["id"], data["contestId"], data["problem"]["index"], user, data["verdict"])
-    else :
-        return Submission(data["id"], data["contestId"], data["problem"]["index"], user, "UNKNOWN")
+    return Submission(data["id"], data["contestId"], data["problem"]["index"], user, data.get("verdict", "UNKOWN"))
 
 def get_users ( ):
     r = requests.get("http://codeforces.com/api/user.ratedList?activeOnly=true")
@@ -71,8 +61,7 @@ def get_submissions ( user_names ):
     for user in user_names :
         # TODO : Only fetch new information through use of first and what is
         # currently in the database
-        # TODO : remove count parameter when all data is ready to be scraped ( will take a long time )
-        r = requests.get("http://codeforces.com/api/user.status?handle={}&count=10".format(user))
+        r = requests.get("http://codeforces.com/api/user.status?handle={}".format(user))
         response = r.json()
         if response["status"] != "OK" :
             return []
@@ -98,11 +87,15 @@ if __name__ == "__main__" :
     # Merge runs either add or update depending on if the record already exists
     for user in users :
         session.merge(user)
-    for contest in contests:
-        session.merge(contest)
     for problem in problems:
         session.merge(problem)
     for submission in submissions:
         session.merge(submission)
+    for contest in contests:
+        contest.num_users = session.query(Submission).filter(Submission.contest_id ==
+                                         contest.id).distinct(Submission.who).count()
+        contest.num_problems = session.query(Problem).filter(Problem.contest_id ==
+                                      contest.id).count()
+        session.merge(contest)
 
     session.commit()
