@@ -1,12 +1,10 @@
-#!python
-
-
 # from io       import StringIO
 # from random   import randint
 # import requests
-from unittest import main, TestCase
+from config import TEST_DATABASE_URI
 from models import *
 from sqlalchemy.orm import sessionmaker
+from unittest import main, TestCase
 
 # ------------
 # TestComProDB
@@ -143,7 +141,7 @@ class TestComProDB (TestCase) :
 
         orig_length = len(session.query(User).all())
 
-        try:        
+        try:
             session.add(u1)
             session.add(u2)
             l = session.query(User).all()
@@ -170,7 +168,7 @@ class TestComProDB (TestCase) :
 
         orig_length = len(session.query(User).all())
 
-        try:        
+        try:
             session.add(u1)
             session.add(u2)
             l = session.query(User).all()
@@ -181,7 +179,7 @@ class TestComProDB (TestCase) :
             pass
 
         session.rollback()
-    
+
     #--------
     # Contest
     #--------
@@ -306,7 +304,7 @@ class TestComProDB (TestCase) :
 
         orig_length = len(session.query(Contest).all())
 
-        try:        
+        try:
             session.add(c1)
             session.add(c2)
             l = session.query(Contest).all()
@@ -333,7 +331,7 @@ class TestComProDB (TestCase) :
 
         orig_length = len(session.query(Contest).all())
 
-        try:        
+        try:
             session.add(c1)
             session.add(c2)
             l = session.query(Contest).all()
@@ -469,7 +467,7 @@ class TestComProDB (TestCase) :
 
         orig_length = len(session.query(Problem).all())
 
-        try:        
+        try:
             session.add(p1)
             session.add(p2)
             l = session.query(Problem).all()
@@ -496,7 +494,7 @@ class TestComProDB (TestCase) :
 
         orig_length = len(session.query(Problem).all())
 
-        try:        
+        try:
             session.add(p1)
             session.add(p2)
             l = session.query(Problem).all()
@@ -514,4 +512,5 @@ class TestComProDB (TestCase) :
 # ----
 
 if __name__ == "__main__" : # pragma: no cover
+    app.config["SQLALCHEMY_DATABASE_URI"] = TEST_DATABASE_URI
     main()

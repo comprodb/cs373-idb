@@ -1,6 +1,7 @@
 from blueprints.contests import contests
 from blueprints.problems import problems
 from blueprints.users import users
+from blueprints.test import test
 from config import SQLALCHEMY_DATABASE_URI, DEBUG_DATABASE_URI
 from flask import jsonify, request
 from models import app, db
@@ -14,6 +15,7 @@ import os.path
 app.register_blueprint(contests, url_prefix='/api/contests')
 app.register_blueprint(problems, url_prefix='/api/problems')
 app.register_blueprint(users, url_prefix='/api/users')
+app.register_blueprint(test, url_prefix='/api/test')
 
 # Routes
 @app.route('/')

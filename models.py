@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 # Allow db config to change depending on development vs production
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 class User(db.Model):
