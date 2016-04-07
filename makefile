@@ -24,7 +24,7 @@ check:
     fi;                                           \
     echo "success";
 
-.PHONY: clean IDB1.log
+.PHONY: clean IDB1.log test
 
 clean:
 	rm -f  *.pyc
@@ -44,7 +44,8 @@ status:
 	git status
 
 test: tests.py
-	python ./tests.py
+	coverage3 run --branch ./tests.py
+	coverage3 report --omit='*/lib/python3.4/*','/lusr/lib/python3.4/*' -m
 
 models.html: models.py
 	python -m pydoc -w models
