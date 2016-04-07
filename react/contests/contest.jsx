@@ -1,27 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router';
 import moment from 'moment';
+import { loadSingular } from '../data/load-data';
 
 export default class Contest extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const id = props.params.id;
-
+  constructor() {
+    super();
     this.state = {
       contest: null,
     };
+
+    this.loadContest = this.loadContest.bind(this);
+  }
+
+  componentDidMount() {
+    this.loadContest();
+  }
+
+  loadContest() {
+    loadSingular(`/api/contests/${this.props.params.id}`)
+      .then((data) => this.setState({ contest: data }));
   }
 
   render() {
     const contest = this.state.contest;
 
-    const contest_problems = problems.filter((problem) => {
-      return problem.contest_id === contest.id
-    });
+    if (!contest) {
+      return (
+        <h1>Loading...</h1>
+      );
+    }
 
     const date = moment.unix(contest.date).format("MMM Do YYYY");
-
     const url = `http://codeforces.com/contest/${contest.id}`;
 
     return (
@@ -30,7 +40,7 @@ export default class Contest extends React.Component {
         <p>Posted {date}</p>
         <h3>Problems</h3>
         <div className="list-group">
-          {contest_problems.map((problem) => (
+          {contest.contest_problems.map((problem) => (
             <Link
               to={`/problems/${problem.id}`}
               className="list-group-item"
