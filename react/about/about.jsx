@@ -99,9 +99,7 @@ export default class About extends React.Component {
         <a href="#test" role="button" onClick={this.runTest}>
           <h3 id="test" className="text-center">Run Tests</h3>
         </a>
-        <div className="panel panel-default" key="TESTS">
-          <p>{test_result}</p>
-        </div>
+        <pre>{test_result}</pre>
       </div>
     );
   }
