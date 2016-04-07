@@ -16,12 +16,14 @@ export default class ContestsIndex extends React.Component {
 
     this.loadContests = this.loadContests.bind(this);
     this.sortBy = this.sortBy.bind(this);
+    this.nextPage = this.nextPage.bind(this);
+    this.prevPage = this.prevPage.bind(this);
 
     this.loadContests();
   }
 
   loadContests() {
-    loadList('/api/contests', this.state.sorted_by, this.state.reverse)
+    loadList('/api/contests', this.state.sorted_by, this.state.reverse, this.state.page)
       .then((data) => this.setState({ contests: data }));
   }
 
@@ -34,6 +36,20 @@ export default class ContestsIndex extends React.Component {
     this.setState({
       sorted_by: field,
       reverse: reverse,
+    }, this.loadContests);
+  }
+
+  nextPage(e) {
+    e.preventDefault();
+    this.setState({
+      page: this.state.page + 1,
+    }, this.loadContests);
+  }
+
+  prevPage(e) {
+    e.preventDefault();
+    this.setState({
+      page: this.state.page - 1,
     }, this.loadContests);
   }
 
@@ -69,6 +85,7 @@ export default class ContestsIndex extends React.Component {
             <tr>
               {fields.map((field) => (
                 <Th
+                  key={field.name}
                   title={field.title}
                   sorted={field.name === this.state.sorted_by}
                   reverse={this.state.reverse}
@@ -91,6 +108,20 @@ export default class ContestsIndex extends React.Component {
             })}
           </tbody>
         </table>
+        <nav>
+          <ul className="pager">
+            <li className={this.state.page > 1 ? "previous" : "previous disabled"}>
+              <a href="#" onClick={this.prevPage}>
+                <span aria-hidden="true">&larr;</span> Older
+              </a>
+            </li>
+            <li className="next">
+              <a href="#" onClick={this.nextPage}>
+                Newer <span aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     );
   }

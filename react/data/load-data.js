@@ -1,4 +1,4 @@
-export function loadList(path, sort, reverse) {
+export function loadList(path, sort, reverse, page) {
   return new Promise((resolve, reject) => {
     const url = new URL(path, location.origin);
     let params = new URLSearchParams();
@@ -9,6 +9,10 @@ export function loadList(path, sort, reverse) {
 
     if (sort) {
       params.append('sort', sort);
+    }
+
+    if (page) {
+      params.append('page', page);
     }
 
     url.search = params.toString();
