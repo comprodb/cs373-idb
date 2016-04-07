@@ -1,50 +1,79 @@
 import React from 'react';
 import { Link } from 'react-router';
 import moment from 'moment';
-
-import users from '../data/users';
+import { loadList } from '../data/load-data';
+import Th from '../shared/th';
 
 export default class UsersIndex extends React.Component {
   constructor() {
     super();
     this.state = {
-      users: users,
+      users: [],
+      page: 1,
       sorted_by: null,
+      reverse: false,
     };
 
+    this.loadUsers = this.loadUsers.bind(this);
     this.sortBy = this.sortBy.bind(this);
+
+    this.loadUsers();
+  }
+
+  loadUsers() {
+    loadList('/api/users', this.state.sorted_by, this.state.reverse)
+      .then((data) => this.setState({ users: data }));
   }
 
   sortBy(field) {
-    let users = this.state.users;
+    let reverse = false;
     if (field === this.state.sorted_by) {
-      users.reverse();
-    } else {
-      users.sort((a, b) => {
-        if (a[field] < b[field]) return -1;
-        if (a[field] > b[field]) return 1;
-        return 0;
-      });
+      reverse = !this.state.reverse;
     }
 
     this.setState({
-      users: users,
       sorted_by: field,
-    });
+      reverse: reverse,
+    }, this.loadUsers);
   }
 
   render() {
+    const fields = [
+      {
+        name: 'handle',
+        title: 'Handle',
+      },
+      {
+        name: 'name',
+        title: 'Name',
+      },
+      {
+        name: 'rank',
+        title: 'Rank',
+      },
+      {
+        name: 'rating',
+        title: 'Rating',
+      },
+      {
+        name: 'registration_time',
+        title: 'Registration Date',
+      },
+    ];
+
     return (
       <div>
         <h1>Users</h1>
         <table className="table table-striped">
           <thead>
             <tr>
-              <th><a href="#" onClick={() => this.sortBy('handle')}>Handle</a></th>
-              <th><a href="#" onClick={() => this.sortBy('name')}>Name</a></th>
-              <th><a href="#" onClick={() => this.sortBy('rank')}>Rank</a></th>
-              <th><a href="#" onClick={() => this.sortBy('rating')}>Rating</a></th>
-              <th><a href="#" onClick={() => this.sortBy('registration_time')}>Registration Date</a></th>
+              {fields.map((field) => (
+                <Th
+                  title={field.title}
+                  sorted={field.name === this.state.sorted_by}
+                  reverse={this.state.reverse}
+                  onClick={() => this.sortBy(field.name)} />
+              ))}
             </tr>
           </thead>
           <tbody>

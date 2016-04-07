@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import moment from 'moment';
 import { loadList } from '../data/load-data';
+import Th from '../shared/th';
 
 export default class ContestsIndex extends React.Component {
   constructor() {
@@ -37,7 +38,28 @@ export default class ContestsIndex extends React.Component {
   }
 
   render() {
-    const fields = ['id', 'participants', 'problems', 'name', 'date'];
+    const fields = [
+      {
+        name: 'id',
+        title: 'ID #',
+      },
+      {
+        name: 'participants',
+        title: '# Participants',
+      },
+      {
+        name: 'problems',
+        title: '# Problems',
+      },
+      {
+        name: 'name',
+        title: 'Name',
+      },
+      {
+        name: 'date',
+        title: 'Date',
+      },
+    ];
 
     return (
       <div>
@@ -45,21 +67,13 @@ export default class ContestsIndex extends React.Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              {fields.map((field) => {
-                let arrow;
-                if (field === this.state.sorted_by) {
-                  arrow = this.state.reverse ? '↓' : '↑';
-                }
-
-                return (
-                  <th key={field}>
-                    <a href="#" onClick={() => this.sortBy(field)}>
-                      {field.charAt(0).toUpperCase() + field.slice(1)}
-                    </a>
-                    {" "}{arrow}
-                  </th>
-                );
-              })}
+              {fields.map((field) => (
+                <Th
+                  title={field.title}
+                  sorted={field.name === this.state.sorted_by}
+                  reverse={this.state.reverse}
+                  onClick={() => this.sortBy(field.name)} />
+              ))}
             </tr>
           </thead>
           <tbody>

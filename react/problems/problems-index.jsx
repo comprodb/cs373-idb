@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { loadList } from '../data/load-data';
+import Th from '../shared/th';
 
 export default class ProblemIndex extends React.Component {
   constructor() {
@@ -7,7 +9,9 @@ export default class ProblemIndex extends React.Component {
 
     this.state = {
       problems: [],
+      page: 1,
       sorted_by: null,
+      reverse: false,
     };
 
     this.sortBy = this.sortBy.bind(this);
@@ -17,31 +21,56 @@ export default class ProblemIndex extends React.Component {
   }
 
   loadProblems() {
-    fetch('/api/problems/').then((response) => {
-      if (response.status >= 400) {
-        throw new Error("Bad response from server");
-      }
-      return response.json();
-    }).then(({ data }) => {
-      this.setState({ problems: data });
-    });
+    loadList('/api/problems/', this.state.sorted_by, this.state.reverse)
+      .then((data) => this.setState({ problems: data }));
   }
 
   sortBy(field) {
+    let reverse = false;
+    if (field === this.state.sorted_by) {
+      reverse = !this.state.reverse;
+    }
+
+    this.setState({
+      sorted_by: field,
+      reverse: reverse,
+    }, this.loadProblems);
   }
 
   render() {
+    const fields = [
+      {
+        name: 'name',
+        title: 'Name',
+      },
+      {
+        name: 'contest_id',
+        title: 'Contest ID',
+      },
+      {
+        name: 'index',
+        title: 'index',
+      },
+      {
+        name: 'points',
+        title: 'Points',
+      },
+    ];
+
     return (
       <div>
         <h1>Problems</h1>
         <table className="table table-striped">
           <thead>
             <tr>
-              <th><a href="#" onClick={() => this.sortBy('name')}>Name</a></th>
-              <th><a href="#" onClick={() => this.sortBy('contest_id')}>Contest ID</a></th>
-              <th><a href="#" onClick={() => this.sortBy('index')}>Index</a></th>
+              {fields.map((field) => (
+                <Th
+                  title={field.title}
+                  sorted={field.name === this.state.sorted_by}
+                  reverse={this.state.reverse}
+                  onClick={() => this.sortBy(field.name)} />
+              ))}
               <th>Tags</th>
-              <th><a href="#" onClick={() => this.sortBy('points')}>Points</a></th>
             </tr>
           </thead>
           <tbody>
@@ -50,12 +79,12 @@ export default class ProblemIndex extends React.Component {
                 <td><Link to={`/problems/${problem.id}`}>{problem.name}</Link></td>
                 <td><Link to={`/contests/${problem.contest_id}`}>{problem.contest_id}</Link></td>
                 <td>{problem.index}</td>
+                <td>{problem.points}</td>
                 <td>
                   {problem.tags.map((tag) => (
                     <p className="label label-default" key={tag}>{tag}</p>
                   ))}
                 </td>
-                <td>{problem.points}</td>
               </tr>
             ))}
           </tbody>
