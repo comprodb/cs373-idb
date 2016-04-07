@@ -25,7 +25,6 @@ export default class About extends React.Component {
     }).then(({ data }) => {
       this.setState({ test_result: data });
     });
-    // this.setState({ test_result: "test" });
   }
 
   render() {
