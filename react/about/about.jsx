@@ -10,6 +10,7 @@ export default class About extends React.Component {
     this.state = {
       abouts: abouts,
       statistics: statistics,
+      loading: false,
       test_result: "Waiting for user to run tests...",
     };
 
@@ -17,13 +18,21 @@ export default class About extends React.Component {
   }
 
   runTest() {
+    this.setState({
+      test_result: "Currently running tests",
+      loading: true,
+    });
+
     fetch('/api/test').then((response) => {
       if (response.status >= 400) {
         throw new Error("Bad response from server");
       }
       return response.json();
     }).then(({ data }) => {
-      this.setState({ test_result: data });
+      this.setState({
+        test_result: data,
+        loading: false,
+      });
     });
   }
 
@@ -96,11 +105,22 @@ export default class About extends React.Component {
             </div>
           </div>
         </div>
-        <a href="#test" role="button" onClick={this.runTest}>
-          <h3 id="test" className="text-center">Run Tests</h3>
-        </a>
-        <div className="panel panel-default" key="TESTS">
-          <p>{test_result}</p>
+        <h1 className="text-center">Tests</h1>
+        <div className="panel panel-default">
+          <div className="panel-body">
+            <pre>
+              <code>
+                {test_result}
+              </code>
+            </pre>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={this.runTest}
+              disabled={this.state.loading}>
+              Run Tests
+            </button>
+          </div>
         </div>
       </div>
     );
