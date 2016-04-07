@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import moment from 'moment';
 
-import problems from '../data/problems';
-
 export default class Contest extends React.Component {
   constructor(props) {
     super(props);
