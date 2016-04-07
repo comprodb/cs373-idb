@@ -3,4 +3,4 @@ flask
 psycopg2
 sqlalchemy
 Flask-SQLAlchemy
-coverage3
+coverage
