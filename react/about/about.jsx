@@ -10,11 +10,26 @@ export default class About extends React.Component {
     this.state = {
       abouts: abouts,
       statistics: statistics,
+      test_result: "Waiting for user to run tests...",
     };
+
+    this.runTest = this.runTest.bind(this);
+  }
+
+  runTest() {
+    fetch('/api/test').then((response) => {
+      if (response.status >= 400) {
+        throw new Error("Bad response from server");
+      }
+      return response.json();
+    }).then(({ data }) => {
+      this.setState({ test_result: data });
+    });
+    // this.setState({ test_result: "test" });
   }
 
   render() {
-    const { abouts, statistics } = this.state;
+    const { abouts, statistics, test_result } = this.state;
 
     return (
       <div className="col-md-8 col-md-offset-2">
@@ -81,6 +96,12 @@ export default class About extends React.Component {
               </ul>
             </div>
           </div>
+        </div>
+        <a href="#test" role="button" onClick={this.runTest}>
+          <h3 id="test" className="text-center">Run Tests</h3>
+        </a>
+        <div className="panel panel-default" key="TESTS">
+          <p>{test_result}</p>
         </div>
       </div>
     );
