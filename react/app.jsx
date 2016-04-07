@@ -41,7 +41,7 @@ const router = (
       </Route>
       <Route path="problems" component={Page}>
         <IndexRoute component={ProblemsIndex} />
-        <Route path=":id" component={Problem} />
+        <Route path=":contest_id/:index" component={Problem} />
       </Route>
       <Route path="contests" component={Page}>
         <IndexRoute component={ContestsIndex} />

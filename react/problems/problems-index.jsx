@@ -92,8 +92,16 @@ export default class ProblemIndex extends React.Component {
           <tbody>
             {this.state.problems.map((problem) => (
               <tr key={problem.id}>
-                <td><Link to={`/problems/${problem.id}`}>{problem.name}</Link></td>
-                <td><Link to={`/contests/${problem.contest_id}`}>{problem.contest_id}</Link></td>
+                <td>
+                  <Link to={`/problems/${problem.contest_id}/${problem.index}`}>
+                    {problem.name}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={`/contests/${problem.contest_id}`}>
+                    {problem.contest_id}
+                  </Link>
+                </td>
                 <td>{problem.index}</td>
                 <td>{problem.points}</td>
                 <td>

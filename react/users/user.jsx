@@ -1,19 +1,32 @@
 import React from 'react';
 import moment from 'moment';
+import { loadSingular } from '../data/load-data';
 
 export default class User extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const id = props.params.id;
-
+  constructor() {
+    super();
     this.state = {
       user: null,
     };
+
+    this.loadUser = this.loadUser.bind(this);
+  }
+
+  componentDidMount() {
+    this.loadUser();
+  }
+
+  loadUser() {
+    loadSingular(`/api/users/${this.props.params.id}`)
+      .then((data) => this.setState({ user: data }));
   }
 
   render() {
     const user = this.state.user;
+
+    if (!user) {
+      return <h1>Loading...</h1>;
+    }
 
     const date = moment.unix(user.registration_time).format("MMM Do YYYY");
 

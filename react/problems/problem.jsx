@@ -1,19 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { loadSingular } from '../data/load-data';
 
 export default class Problem extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const id = props.params.id;
-
+  constructor() {
+    super();
     this.state = {
       problem: null,
     };
+
+    this.loadProblem = this.loadProblem.bind(this);
+  }
+
+  componentDidMount() {
+    this.loadProblem();
+  }
+
+  loadProblem() {
+    const params = this.props.params;
+    loadSingular(`/api/problems/${params.contest_id}/${params.index}`)
+      .then((data) => this.setState({ problem: data }));
   }
 
   render() {
     const problem = this.state.problem;
+
+    if (!problem) {
+      return <h1>Loading...</h1>;
+    }
 
     const url =
       `http://codeforces.com/problemset/problem/${problem.contest_id}/${problem.index}`;

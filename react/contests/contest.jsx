@@ -26,9 +26,7 @@ export default class Contest extends React.Component {
     const contest = this.state.contest;
 
     if (!contest) {
-      return (
-        <h1>Loading...</h1>
-      );
+      return <h1>Loading...</h1>;
     }
 
     const date = moment.unix(contest.date).format("MMM Do YYYY");
@@ -42,7 +40,7 @@ export default class Contest extends React.Component {
         <div className="list-group">
           {contest.contest_problems.map((problem) => (
             <Link
-              to={`/problems/${problem.id}`}
+              to={`/problems/${problem.contest_id}/${problem.index}`}
               className="list-group-item"
               key={problem.id}>
               {problem.name}
