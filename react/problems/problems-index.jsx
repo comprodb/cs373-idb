@@ -28,21 +28,6 @@ export default class ProblemIndex extends React.Component {
   }
 
   sortBy(field) {
-    let problems = this.state.problems;
-    if (field === this.state.sorted_by) {
-      problems.reverse();
-    } else {
-      problems.sort((a, b) => {
-        if (a[field] < b[field]) return -1;
-        if (a[field] > b[field]) return 1;
-        return 0;
-      });
-    }
-
-    this.setState({
-      problems: problems,
-      sorted_by: field,
-    });
   }
 
   render() {
