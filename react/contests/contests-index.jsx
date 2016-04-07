@@ -112,12 +112,12 @@ export default class ContestsIndex extends React.Component {
           <ul className="pager">
             <li className={this.state.page > 1 ? "previous" : "previous disabled"}>
               <a href="#" onClick={this.prevPage}>
-                <span aria-hidden="true">&larr;</span> Older
+                <span aria-hidden="true">&larr;</span> Previous
               </a>
             </li>
             <li className="next">
               <a href="#" onClick={this.nextPage}>
-                Newer <span aria-hidden="true">&rarr;</span>
+                Next <span aria-hidden="true">&rarr;</span>
               </a>
             </li>
           </ul>

@@ -16,12 +16,14 @@ export default class ProblemIndex extends React.Component {
 
     this.sortBy = this.sortBy.bind(this);
     this.loadProblems = this.loadProblems.bind(this);
+    this.nextPage = this.nextPage.bind(this);
+    this.prevPage = this.prevPage.bind(this);
 
     this.loadProblems();
   }
 
   loadProblems() {
-    loadList('/api/problems/', this.state.sorted_by, this.state.reverse)
+    loadList('/api/problems/', this.state.sorted_by, this.state.reverse, this.state.page)
       .then((data) => this.setState({ problems: data }));
   }
 
@@ -34,6 +36,20 @@ export default class ProblemIndex extends React.Component {
     this.setState({
       sorted_by: field,
       reverse: reverse,
+    }, this.loadProblems);
+  }
+
+  nextPage(e) {
+    e.preventDefault();
+    this.setState({
+      page: this.state.page + 1,
+    }, this.loadProblems);
+  }
+
+  prevPage(e) {
+    e.preventDefault();
+    this.setState({
+      page: this.state.page - 1,
     }, this.loadProblems);
   }
 
@@ -89,6 +105,20 @@ export default class ProblemIndex extends React.Component {
             ))}
           </tbody>
         </table>
+        <nav>
+          <ul className="pager">
+            <li className={this.state.page > 1 ? "previous" : "previous disabled"}>
+              <a href="#" onClick={this.prevPage}>
+                <span aria-hidden="true">&larr;</span> Previous
+              </a>
+            </li>
+            <li className="next">
+              <a href="#" onClick={this.nextPage}>
+                Next <span aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     );
   }
