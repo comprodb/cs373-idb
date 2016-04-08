@@ -1,21 +1,21 @@
 export function loadList(path, sort, reverse, page) {
   return new Promise((resolve, reject) => {
     const url = new URL(path, location.origin);
-    let params = new URLSearchParams();
+    let params = "";
+
+    if (page) {
+      params = `?page=${page}`;
+    }
 
     if (reverse) {
-      params.append('order', 'desc');
+      params += '&order=desc';
     }
 
     if (sort) {
-      params.append('sort', sort);
+      params += `&sort=${sort}`;
     }
 
-    if (page) {
-      params.append('page', page);
-    }
-
-    url.search = params.toString();
+    url.search = params;
 
     fetch(url).then((response) => {
       if (response.status >= 400) {
