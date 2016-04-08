@@ -1,3 +1,212 @@
+commit 86ff9db9d10f3bf6a7a4ba70221f2aacc340086b
+Merge: 4dba848 5533cca
+Author: Joseph Ewbank <jdewbank@gmail.com>
+Date:   Thu Apr 7 21:08:07 2016 -0500
+
+    Merge branch 'dev' of https://github.com/comprodb/cs373-idb into dev
+
+commit 4dba84875fb2f5be3ffcf6f2d01ece344bd1a98d
+Author: Joseph Ewbank <jdewbank@gmail.com>
+Date:   Thu Apr 7 21:07:19 2016 -0500
+
+    Added more tests
+
+commit 5533ccab34addeba1d3d9a10307389cd41053283
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 20:30:07 2016 -0500
+
+    Rewrite load-data to not use URLSearchParams
+
+commit 65c1ada7730b86c454b9e31a15461c2f9bd1026a
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 20:18:32 2016 -0500
+
+    Fix keys error
+
+commit 7a0b0df9daacfd592bd7103698261c2b7b867262
+Merge: f39e6f8 a332505
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 18:05:04 2016 -0500
+
+    Merge branch 'dev' of github.com:comprodb/cs373-idb into dev
+
+commit f39e6f89ccca0b58e59e44c4149c964ba2040897
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 18:04:37 2016 -0500
+
+    Style tests section about about
+
+commit a33250575e5a43d14ce55527205abe712e35293f
+Author: Joseph Ewbank <jdewbank@gmail.com>
+Date:   Thu Apr 7 18:03:09 2016 -0500
+
+    made the test button look cooler (on purpose)
+
+commit 959f1106c555b0ec23afe5afd8c8074b47b3f705
+Author: Joseph Ewbank <jdewbank@gmail.com>
+Date:   Thu Apr 7 17:49:01 2016 -0500
+
+    removed the comment to make Robert happy
+
+commit 1317c53509e8156c34c07d6b312da9dfa0d72943
+Author: Joseph Ewbank <jdewbank@gmail.com>
+Date:   Thu Apr 7 17:46:32 2016 -0500
+
+    Added test button
+
+commit 67ed34c0f5e6ce1c40a9f5aab656732680314eb4
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 16:51:06 2016 -0500
+
+    load all data from the API
+
+commit 67c4657ee27c9924b60c20a52c3b30871b926041
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 16:40:26 2016 -0500
+
+    Contest page loads from API
+
+commit 7f2ab073d72e2dca1dd864ca9da85d8b0dac3175
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 16:17:02 2016 -0500
+
+    Remove usage to old data files
+
+commit 39e15180278e5fa41cf82bc9892ffcc728e87832
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 16:08:11 2016 -0500
+
+    add pagination to other pages
+
+commit f53fca935833c410849ae9d2e89f1145d4439083
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Apr 7 15:53:41 2016 -0500
+
+    fix requirements file
+
+commit b40ff22c8cdb9919bcd4c0e19bd231c36c45547c
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Apr 7 15:41:02 2016 -0500
+
+    add back in coverage for testing
+
+commit 77d2627999434a25267393e47398f2ff17797940
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 15:41:31 2016 -0500
+
+    Use db file
+
+commit c7b837a85ac795574c1077a9b2a7a90da3e62e94
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 15:40:01 2016 -0500
+
+    Pagination on contests
+
+commit d4375634364c7abfd01a2075b34bbeba72cbc2b3
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Apr 7 15:21:21 2016 -0500
+
+    add missing blueprint
+
+commit ae1ef919118a40fa8e552f126f9a730464b9335c
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 15:15:15 2016 -0500
+
+    load all data lists from api
+
+commit 2afbc454f54d615138bff54acab020e3b6e692e5
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 14:20:12 2016 -0500
+
+    Add postgres file
+
+commit 21eb5afbb070f1acd47a1f324fb18604896dbaa6
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 14:18:54 2016 -0500
+
+    contests list now interacts with backend
+
+commit c1458bb5c14f5ba58999d7809f2c201c355aa343
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Apr 7 13:12:52 2016 -0500
+
+    add api endpoint to run tests
+
+commit c2dc44730563c9c5535987335dd674191ef8e961
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 5 21:06:11 2016 -0500
+
+    Include more data in scrape.py
+
+commit e3917195bb87de1618c0e5fe46794c589cb64910
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 5 16:18:09 2016 -0500
+
+    Return list of problems for a contest
+
+commit e638251aad061614e4485c88bb907063d19f97df
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 5 14:49:58 2016 -0500
+
+    Api endpoints.
+
+commit c7b14221b183e620e753cbfdbc47dc761831e702
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 5 13:11:55 2016 -0500
+
+    Support for fetching a specific user/problem/contest.
+    
+    Contest is still missing some data.
+
+commit 73ec0de3680175ddb899c968f9b3ffc70e1358fb
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 5 11:35:27 2016 -0500
+
+    Add skeleton for other api endpoints
+
+commit 3356334cbd9238f40174e5370b8c8eb8635999d7
+Merge: a69a05f 36ba13f
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 5 11:20:03 2016 -0500
+
+    Merge branch 'master' into dev
+
+commit a69a05f354e156aec0d9e83160b7178685ab2a67
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 5 11:15:29 2016 -0500
+
+    debug mode to use sqlite
+
+commit 36ba13f471d73eb0a31da8735154988fbdfc3187
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Tue Apr 5 10:58:25 2016 -0500
+
+    Fetch problems from API
+
+commit f2cba9757a231f13db1c40a687ae71a12d74ea24
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Mon Apr 4 18:40:45 2016 -0500
+
+    Move contests to get data from server
+
+commit 9d9446e3f72b2a76675f8b25dc229f9482b5d72c
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Sat Apr 2 21:54:59 2016 -0500
+
+    added example api backend
+
+commit 2df2ea47d36ae2df3e6aa8ddab66c8921d356fa6
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Fri Apr 1 11:31:24 2016 -0500
+
+    Code for pulling data from codeforces.
+
+commit 46e1bbb1818628fcdc8ce4b3d8ea62a0887af8b3
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Mar 24 20:20:36 2016 -0500
+
+    I was too eager with that regex
+
 commit cc4e8a4bac93502ad7fd5c0b13193537c8ade176
 Author: Robert Lynch <robertlynch2012@gmail.com>
 Date:   Thu Mar 24 20:17:36 2016 -0500
