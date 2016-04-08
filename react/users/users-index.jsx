@@ -85,6 +85,7 @@ export default class UsersIndex extends React.Component {
             <tr>
               {fields.map((field) => (
                 <Th
+                  key={field.name}
                   title={field.title}
                   sorted={field.name === this.state.sorted_by}
                   reverse={this.state.reverse}
