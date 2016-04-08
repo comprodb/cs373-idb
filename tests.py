@@ -125,7 +125,7 @@ class TestComProDB (TestCase) :
 
 
         session.rollback()
-
+	
     def test_User_5 (self) :
         db.create_all()
         connection = db.engine.connect()
@@ -371,6 +371,7 @@ class TestComProDB (TestCase) :
         db.create_all()
         connection = db.engine.connect()
         trans = connection.begin()
+        # id, name, date, num_users, num_problems
 
         # contest_id, index, name, tags, points
         p1 = Problem(0, "D", "Bob", "special", 2.4)
@@ -507,6 +508,102 @@ class TestComProDB (TestCase) :
         session.rollback()
 
 
+    # ------------
+    # User to_dict
+    # ------------
+
+    def test_user_dict_1 (self) :
+    # handle, name, rank, rating, registration_time
+        u = User('a','b','c',1,2)
+
+        self.assertTrue('handle' in u.to_dict())
+        self.assertTrue(u.to_dict()['handle'] == 'a')
+
+    def test_user_dict_2 (self) :
+    # handle, name, rank, rating, registration_time
+        u = User('a','b','c',1,2)
+
+        self.assertTrue('handle' in u.to_dict())
+        self.assertTrue('name' in u.to_dict())
+        self.assertTrue('rank' in u.to_dict())
+        self.assertTrue('rating' in u.to_dict())
+        self.assertTrue('registration_time' in u.to_dict())
+
+    def test_user_dict_3 (self) :
+    # handle, name, rank, rating, registration_time
+        u = User('a','b','c',1,2)
+
+        self.assertTrue(u.to_dict()['handle'] == 'a')
+        self.assertTrue(u.to_dict()['name'] == 'b')
+        self.assertTrue(u.to_dict()['rank'] == 'c')
+        self.assertTrue(u.to_dict()['rating'] == 1)
+        self.assertTrue(u.to_dict()['registration_time'] == 2)
+
+    # ------------
+    # Contest to_dict
+    # ------------
+
+    # id, name, date, participants, problems
+    def test_contest_dict_1 (self) :
+    # id, name, date, participants, problems
+        c = Contest(3,'b',4,1,2)
+
+        self.assertTrue('id' in c.to_dict())
+        self.assertTrue(c.to_dict()['id'] == 3)
+
+    def test_contest_dict_2 (self) :
+    # id, name, date, participants, problems
+        c = Contest(3,'b',4,1,2)
+
+        self.assertTrue('id' in c.to_dict())
+        self.assertTrue('name' in c.to_dict())
+        self.assertTrue('date' in c.to_dict())
+        self.assertTrue('participants' in c.to_dict())
+        self.assertTrue('problems' in c.to_dict())
+
+    def test_contest_dict_3 (self) :
+    # id, name, date, participants, problems
+        c = Contest(3,'b',4,1,2)
+
+        self.assertTrue(c.to_dict()['id'] == 3)
+        self.assertTrue(c.to_dict()['name'] == 'b')
+        self.assertTrue(c.to_dict()['date'] == 4)
+        self.assertTrue(c.to_dict()['participants'] == 1)
+        self.assertTrue(c.to_dict()['problems'] == 2)
+
+
+    # ------------
+    # Problem to_dict
+    # ------------
+
+    # id, name, index, contest_id, tags, points
+    def test_problem_dict_1 (self) :
+        # contest_id, index, name, tags, points
+        p = Problem(240, "D", "Bob", str(['special', 'test']), 2.4)
+
+        self.assertTrue('id' in p.to_dict())
+        self.assertTrue(p.to_dict()['id'] == "240D")
+
+    def test_problem_dict_2 (self) :
+        p = Problem(0, "D", "Bob", str(['special']), 2.4)
+
+        self.assertTrue('id' in p.to_dict())
+        self.assertTrue('name' in p.to_dict())
+        self.assertTrue('index' in p.to_dict())
+        self.assertTrue('contest_id' in p.to_dict())
+        self.assertTrue('tags' in p.to_dict())
+        self.assertTrue('points' in p.to_dict())
+
+    def test_problem_dict_3 (self) :
+        p = Problem(0, "D", "Bob", str(['special']), 2.4)
+
+        self.assertTrue(p.to_dict()['id'] == "0D")
+        self.assertTrue(p.to_dict()['name'] == "Bob")
+        self.assertTrue(p.to_dict()['index'] == "D")
+        self.assertTrue(p.to_dict()['contest_id'] == 0)
+        self.assertTrue(p.to_dict()['points'] == 2.4)
+
+#
 # ----
 # main
 # ----
