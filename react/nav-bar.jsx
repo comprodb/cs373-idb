@@ -23,6 +23,12 @@ export default class NavBar extends React.Component {
               <li><IndexLink to="/contests" activeClassName="active">Contests</IndexLink></li>
               <li><IndexLink to="/about" activeClassName="active">About</IndexLink></li>
             </ul>
+            <form action="/search" method="get" className="navbar-form navbar-right" role="search" >
+              <div className="form-group">
+                <input name="query" type="text" className="form-control" placeholder="Search"/>
+              </div>
+              <button type="submit" className="btn btn-default">Go</button>
+            </form>
           </div>
         </div>
       </nav>
