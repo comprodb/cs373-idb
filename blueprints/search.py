@@ -63,9 +63,9 @@ def root( ):
 
     # get results for each table
     all_results = {}
-    all_results['users'] = [ i.to_dict() for i in db.session.query(User).filter(user_all_filter).all()]
-    all_results['contests'] = [ i.to_dict() for i in db.session.query(Contest).filter(contest_all_filter).all()]
-    all_results['problems'] = [ i.to_dict() for i in db.session.query(Problem).filter(problem_all_filter).all()]
+    all_results['users'] = [ i.to_dict() for i in db.session.query(User).filter(user_all_filter).limit(50).all()]
+    all_results['contests'] = [ i.to_dict() for i in db.session.query(Contest).filter(contest_all_filter).limit(50).all()]
+    all_results['problems'] = [ i.to_dict() for i in db.session.query(Problem).filter(problem_all_filter).limit(50).all()]
 
     # filter for records containing any item and not already obtained (by checking primary key)
     contest_some_filter = (or_( *map( partial_contest_query, terms )) &
@@ -78,9 +78,9 @@ def root( ):
 
     # get results for each table
     some_results = {}
-    some_results['users'] = [ i.to_dict() for i in db.session.query(User).filter(user_some_filter).all()]
-    some_results['contests'] = [ i.to_dict() for i in db.session.query(Contest).filter(contest_some_filter).all()]
-    some_results['problems'] = [ i.to_dict() for i in db.session.query(Problem).filter(problem_some_filter).all()]
+    some_results['users'] = [ i.to_dict() for i in db.session.query(User).filter(user_some_filter).limit(50-len(all_results['users'])).all()]
+    some_results['contests'] = [ i.to_dict() for i in db.session.query(Contest).filter(contest_some_filter).limit(50-len(all_results['contests'])).all()]
+    some_results['problems'] = [ i.to_dict() for i in db.session.query(Problem).filter(problem_some_filter).limit(50-len(all_results['problems'])).all()]
 
 
     # return data in one object
