@@ -20,6 +20,8 @@ import Contest from './contests/contest';
 
 import About from './about/about';
 
+import Search from './search/search';
+
 class App extends React.Component {
   render() {
     return (
@@ -48,6 +50,7 @@ const router = (
         <Route path=":id" component={Contest} />
       </Route>
       <Route path="about" component={About} />
+      <Route path="search" component={Search} />
     </Route>
   </Router>
 );
