@@ -3,8 +3,6 @@ from models import db, Contest, Problem, User
 from functools import reduce
 from sqlalchemy import and_, or_
 
-import operator
-
 search = Blueprint('search', __name__)
 
 def partial_contest_query ( i ):
@@ -74,10 +72,9 @@ def root( ):
                 ~Contest.id.in_(list(map(lambda i:i['id'], all_results['contests']))) )
     problem_some_filter = (or_( *map( partial_problem_query, terms )) &
                 ~(Problem.contest_id.in_(list(map(lambda i:i['contest_id'], all_results['problems'])))
-                  & Problem.contest_index.in_(list(map(lambda i:i['contest_index'], all_results['problems']))) ))
+                & Problem.contest_index.in_(list(map(lambda i:i['index'], all_results['problems']))) ))
     user_some_filter = (or_( *map( partial_user_query, terms )) &
-                ~User.handle.in_(list(map(lambda i:i['handle'], all_results['users'])))
-                        )
+                ~User.handle.in_(list(map(lambda i:i['handle'], all_results['users'])))  )
 
     # get results for each table
     some_results = {}
