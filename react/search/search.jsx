@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchResults from './search-results';
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -28,7 +29,25 @@ export default class Search extends React.Component {
     }
 
     return (
-      <h1>Search</h1>
+      <div className="col-md-6 col-md-offset-3">
+        <h1>Search Results</h1>
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <h2>All results</h2>
+          </div>
+          <div className="panel-body">
+            <SearchResults data={data.all} term={query} />
+          </div>
+        </div>
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <h2>Similar results</h2>
+          </div>
+          <div className="panel-body">
+            <SearchResults data={data.some} term={query} />
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -26,7 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar query={this.props.location.query.query} />
         {this.props.children}
       </div>
     );

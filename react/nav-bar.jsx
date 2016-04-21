@@ -3,6 +3,8 @@ import { IndexLink } from 'react-router'
 
 export default class NavBar extends React.Component {
   render() {
+    const { query } = this.props;
+
     return (
       <nav className="navbar navbar-default">
         <div className="container-fluid">
@@ -25,7 +27,12 @@ export default class NavBar extends React.Component {
             </ul>
             <form action="/search" method="get" className="navbar-form navbar-right" role="search" >
               <div className="form-group">
-                <input name="query" type="text" className="form-control" placeholder="Search"/>
+                <input
+                  name="query"
+                  type="text"
+                  className="form-control"
+                  placeholder="Search"
+                  defaultValue={query} />
               </div>
               <button type="submit" className="btn btn-default">Go</button>
             </form>
