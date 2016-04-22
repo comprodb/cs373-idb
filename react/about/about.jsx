@@ -102,6 +102,8 @@ export default class About extends React.Component {
                 <li>Apiary</li>
                 <li>Slack</li>
               </ul>
+              <h3>Presentation</h3>
+              <p><a href="https://speakerdeck.com/tpopp/comprodb-dot-me">speakerdeck.com/tpopp/comprodb-dot-me</a></p>
             </div>
           </div>
         </div>
