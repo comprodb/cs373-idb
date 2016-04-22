@@ -1,7 +1,7 @@
 FILES :=                              \
     .travis.yml                       \
     makefile                          \
-    IDB1.log                          \
+    IDB3.log                          \
     models.html                       \
     models.py
 
@@ -50,9 +50,9 @@ test: tests.py
 models.html: models.py
 	python -m pydoc -w models
 
-IDB1.log:
-	git log > IDB1.log
+IDB3.log:
+	git log > IDB3.log
 
-commit: $(FILES) IDB1.log models.html
+commit: $(FILES) IDB3.log models.html
 	git add IDB1.log models.html
 	git commit

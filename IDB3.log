@@ -1,3 +1,63 @@
+commit a632807a86e51cb9db22c695f2ff60e277da0e12
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Thu Apr 21 19:37:46 2016 -0500
+
+    add link to presentation
+
+commit ec316782a63cf6f0fe4899806671756f0e66136e
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 21 13:18:11 2016 -0500
+
+    Deep linking in search results pane
+
+commit e25cdd8835763ff0bdb0d19c0b799bbe8dc429b8
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 21 13:07:10 2016 -0500
+
+    Finish search page
+
+commit 8ce7de32c6ea353b595a4a09de14ea36f4ce2be4
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 19 23:47:25 2016 -0500
+
+    limit results returned
+
+commit da8b45422ba83b96abb2134c449792bc118cee0d
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 19 23:34:40 2016 -0500
+
+    fixed refactor bug
+
+commit 5b7dbae13edf0f491acbc0207d07ddd449cab60c
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Tue Apr 19 23:29:00 2016 -0500
+
+    Add search component
+
+commit c924e843e7233944ffb29c1cbda3081cbfc259f0
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 19 18:36:10 2016 -0500
+
+    added search to nav-bar
+
+commit 97b3b7718fa2a8c832dd0c3164df625870d765d8
+Author: Tres Popp <theodore.popp3@gmail.com>
+Date:   Tue Apr 19 18:01:35 2016 -0500
+
+    Add search api functionality
+
+commit 8fc783f7471e85e2388f8eda547f2aaf2d0e1d6b
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Tue Apr 19 19:45:35 2016 -0500
+
+    Update prod docker compose
+
+commit 6cab54d54e1795bf876cde2d7acb79e0b1ac43c5
+Author: Robert Lynch <robertlynch2012@gmail.com>
+Date:   Thu Apr 7 21:16:48 2016 -0500
+
+    Update commit log
+
 commit 86ff9db9d10f3bf6a7a4ba70221f2aacc340086b
 Merge: 4dba848 5533cca
 Author: Joseph Ewbank <jdewbank@gmail.com>
