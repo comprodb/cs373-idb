@@ -7,8 +7,10 @@ from config import SQLALCHEMY_DATABASE_URI, DEBUG_DATABASE_URI
 from flask import jsonify, request
 from models import app, db
 
+import json
 import models
 import psycopg2
+import requests
 import sys
 import time
 import os.path
@@ -18,6 +20,11 @@ app.register_blueprint(problems, url_prefix='/api/problems')
 app.register_blueprint(users, url_prefix='/api/users')
 app.register_blueprint(test, url_prefix='/api/test')
 app.register_blueprint(search, url_prefix='/api/search')
+
+@app.route('/api/meteors')
+def meteors():
+    response = jsonify(data=json.loads(requests.get('http://meteorite-landings.me/api/meteorites').text))
+    return response
 
 # Routes
 @app.route('/')

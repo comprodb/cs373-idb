@@ -22,6 +22,8 @@ import About from './about/about';
 
 import Search from './search/search';
 
+import Meteors from './meteors/meteors';
+
 class App extends React.Component {
   render() {
     return (
@@ -51,6 +53,7 @@ const router = (
       </Route>
       <Route path="about" component={About} />
       <Route path="search" component={Search} />
+      <Route path="meteors" component={Meteors} />
     </Route>
   </Router>
 );
