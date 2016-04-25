@@ -1,7 +1,7 @@
 module.exports = {
-	commits: 68,
-	issues: 15,
-	tests: 18,
+	commits: 110,
+	issues: 46,
+	tests: 27,
 	apiary: 'http://docs.comprodb1.apiary.io/#reference/users/all-users',
 	tracker: 'https://github.com/comprodb/cs373-idb/issues',
 	repo: 'https://github.com/comprodb/cs373-idb',
