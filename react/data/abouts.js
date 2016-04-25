@@ -4,8 +4,8 @@ module.exports = [
 		photo: "http://bobertforever.github.io/cs373-blog/images/profile.jpg",
 		bio: "Webdev Person",
 		responsibilities: "Resident React / Docker Expert",
-		commits: "35",
-		issues: "5",
+		commits: "57",
+		issues: "14",
 		tests: "0",
 	},
 	{
@@ -13,8 +13,8 @@ module.exports = [
 		photo: "https://pbs.twimg.com/profile_images/524619956118224896/w1KHVzq1.jpeg",
 		bio: "DotA Person",
 		responsibilities: "Generalist",
-		commits: "15",
-		issues: "6",
+		commits: "34",
+		issues: "21",
 		tests: "0",
 	},
 	{
@@ -23,7 +23,7 @@ module.exports = [
 		bio: "Computer Vision Person",
 		responsibilities: "Competitive Programmer",
 		commits: "6",
-		issues: "1",
+		issues: "4",
 		tests: "0",
 	},
 	{
@@ -31,8 +31,8 @@ module.exports = [
 		photo: "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/945811_10151593734529228_40224106_n.jpg?oh=d88e7d3e0ad286e2ce45516ae36f8ee6&oe=57813971",
 		bio: "Aspiring Educator, Secondary DotA Person",
 		responsibilities: "Testing, Documentation",
-		commits: "7",
-		issues: "3",
-		tests: "18",
+		commits: "11",
+		issues: "7",
+		tests: "27",
 	}
 ]
