@@ -18,43 +18,36 @@ export default class Meteors extends React.Component {
   }
 
   loadMeteors () {
-
     fetch("/api/meteors").then((response) => {
       return response.json();
-    }).then ( ( {data}) =>{
+    }).then (({data}) =>{
       data.objects.sort ( ( a,b ) => {
         return a.year - b.year;
       } );
-      this.setState( { meteors : data.objects } );
+      this.setState({ meteors : data.objects });
       this.timer = setInterval(this.tick, 1000);
     });
   }
 
   tick () {
-
     this.setState({index: this.state.index + 1});
-
   }
 
   render() {
+    const { meteors, index } = this.state;
+    let name, country, year;
+    if (meteors.length > 0) {
+      name =  meteors[index].name;
+      country = meteors[index].country.name;
+      year = meteors[index].year;
+    }
+
     return (
-      <div>
+      <div className="col-md-6 col-md-offset-3">
         <h1>Meteors</h1>
-        <table className="table table-striped">
-          <tbody>
-            <tr >
-              <td >
-                {this.state.meteors.length > 0 ? this.state.meteors[this.state.index].name : ''}
-              </td >
-              <td >
-                {this.state.meteors.length > 0 ? this.state.meteors[this.state.index].country.name : ''}
-              </td >
-              <td >
-                {this.state.meteors.length > 0 ? this.state.meteors[this.state.index].year : ''}
-              </td >
-            </tr>
-          </tbody>
-        </table>
+        <h3>Name: {name}</h3>
+        <p>Country: {country}</p>
+        <p>Year: {year}</p>
       </div>
     );
   }
