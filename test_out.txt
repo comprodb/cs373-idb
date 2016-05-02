@@ -1,0 +1,9 @@
+coverage3 run --branch ./tests.py
+coverage3 report --omit='*/lib/python3.4/*','/lusr/lib/python3.4/*' -m
+Name        Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------
+config.py       3      0      0      0   100%   
+models.py      75      6      0      0    92%   159-163, 166
+tests.py      362     12     12      3    96%   148, 150, 175, 177, 311, 313, 338, 340, 475, 477, 502, 504, 123->122, 286->285, 450->449
+-------------------------------------------------------
+TOTAL         440     18     12      3    95%   
